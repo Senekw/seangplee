@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Swap no-js -> js before paint so reveal elements never flash for JS users. -->
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+
+  <title>Sean Lee — Computational Cancer Biology</title>
+  <meta name="description" content="High schooler building computational models of cancer from patient genomic data at MD Anderson. First-author work across 1,274 tumors and six GI cancers." />
+  <meta name="author" content="Sean GP Lee" />
+
+  <!-- Theme color tracks both modes; default (dark) listed first -->
+  <meta name="theme-color" content="#0E0E0C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F4F3EC" media="(prefers-color-scheme: light)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Sean Lee — Computational Cancer Biology" />
+  <meta property="og:description" content="I build computational models of cancer from genomic data and present them as first author. Research intern at MD Anderson since freshman year." />
+  <meta property="og:site_name" content="Sean Lee" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="profile:first_name" content="Sean" />
+  <meta property="profile:last_name" content="Lee" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sean Lee — Computational Cancer Biology" />
+  <meta name="twitter:description" content="First-author computational oncology across 1,274 tumors and six GI cancers. Research intern at MD Anderson." />
+
+  <!-- Inline SVG data-URI favicon: boxed SL monogram, sharp corners -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%230E0E0C'/%3E%3Crect%20x='2.5'%20y='2.5'%20width='27'%20height='27'%20fill='none'%20stroke='%23C6502B'%20stroke-width='1.5'/%3E%3Ctext%20x='16'%20y='21.5'%20font-family='Georgia,serif'%20font-size='15'%20font-weight='700'%20fill='%23F4F3EC'%20text-anchor='middle'%3ESL%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Newsreader (serif display), IBM Plex Mono (labels), Inter (body). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ FIXED TOP BAR ============ -->
+  <header class="topbar" id="top">
+    <div class="topbar__inner">
+      <a class="monogram" href="#top" aria-label="Sean Lee — home">SL</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#research"><span class="nav__num">01</span> Research</a></li>
+          <li><a class="nav__link" href="#record"><span class="nav__num">02</span> Record</a></li>
+          <li><a class="nav__link" href="#brain"><span class="nav__num">03</span> Brain</a></li>
+          <li><a class="nav__link" href="#built"><span class="nav__num">04</span> Built</a></li>
+          <li><a class="nav__link" href="#contact"><span class="nav__num">08</span> Contact</a></li>
+          <li>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Switch color theme" title="Switch theme">
+              <span class="theme-toggle__label" data-theme-label>Light</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 00 — HERO ============ -->
+    <section class="hero" aria-labelledby="hero-name">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"><span class="rail__num">00</span></div>
+        <div class="hero__content reveal">
+          <p class="eyebrow">Computational cancer biology · Katy, Texas</p>
+          <h1 class="hero__name" id="hero-name">Sean Lee</h1>
+          <p class="hero__sub">
+            I build computational models of cancer from patient genomic data and present
+            them as first author. I started independent cancer research at 14, working under
+            an associate professor at MD Anderson — writing the code, building the models,
+            running the analysis.
+          </p>
+
+          <dl class="metarow">
+            <div class="metarow__cell">
+              <dt>Location</dt>
+              <dd>Katy, Texas</dd>
+            </div>
+            <div class="metarow__cell">
+              <dt>Internship</dt>
+              <dd>MD Anderson</dd>
+            </div>
+            <div class="metarow__cell">
+              <dt>Class</dt>
+              <dd>2028</dd>
+            </div>
+          </dl>
+
+          <div class="statstrip" role="group" aria-label="Key figures">
+            <div class="statstrip__cell">
+              <span class="statstrip__num">1,274</span>
+              <span class="statstrip__label">Tumors in my largest study</span>
+            </div>
+            <div class="statstrip__cell">
+              <span class="statstrip__num">3</span>
+              <span class="statstrip__label">First-author works</span>
+            </div>
+            <div class="statstrip__cell">
+              <span class="statstrip__num">Since 2024</span>
+              <span class="statstrip__label">In research — since age 14</span>
+            </div>
+          </div>
+
+          <a class="readlink" href="#research">Read the work <span aria-hidden="true">&#8595;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 01 — RESEARCH ============ -->
+    <section class="section section--alt" id="research" aria-labelledby="research-kicker">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"><span class="rail__num">01</span></div>
+        <div class="section__content">
+          <p class="section__kicker reveal" id="research-kicker"><span class="section__kicker-num">01</span> Research</p>
+
+          <p class="section__lede reveal">
+            I build computational models of cancer from genomic data and present them as
+            first author. I write the code, run the analysis, and own the claims down to
+            the script.
+          </p>
+
+          <div class="prose reveal">
+            <p>
+              I study pSTAT3 — a signaling state tied to inflammation in tumors — across
+              six gastrointestinal cancers. The question I keep asking: what kind of tumor
+              microenvironment does this state actually mark, and does it predict who lives
+              longer?
+            </p>
+          </div>
+
+          <div class="statstrip statstrip--4 reveal" role="group" aria-label="Research at a glance">
+            <div class="statstrip__cell">
+              <span class="statstrip__num">1,274</span>
+              <span class="statstrip__label">Primary tumors analyzed</span>
+            </div>
+            <div class="statstrip__cell">
+              <span class="statstrip__num">6</span>
+              <span class="statstrip__label">GI cancer types</span>
+            </div>
+            <div class="statstrip__cell">
+              <span class="statstrip__num">4</span>
+              <span class="statstrip__label">Molecular data layers</span>
+            </div>
+            <div class="statstrip__cell">
+              <span class="statstrip__num">3</span>
+              <span class="statstrip__label">First-author works</span>
+            </div>
+          </div>
+
+          <ol class="papers">
+            <!-- Paper A — featured -->
+            <li class="paper paper--lead reveal">
+              <p class="paper__status">Manuscript · under submission · 2026</p>
+              <h2 class="paper__title">
+                Tumor Phospho-STAT3 Marks a Shared Angiogenic–Fibrotic, Immune-Replete
+                Microenvironment Across Gastrointestinal Cancers: A Multi-Omic Analysis of
+                1,274 Tumors
+              </h2>
+              <p class="venue">Molecular Oncology · FEBS Press / Wiley · gold open access</p>
+              <p class="authors">
+                <strong>Sean G. P. Lee</strong> <span class="authors__aff">— first &amp; corresponding author</span>
+                · Sunyoung Lee, MD <span class="authors__aff">(MD Anderson Cancer Center)</span>
+              </p>
+              <p class="paper__body">
+                I asked whether tumor pSTAT3 is written into the genome or into the tissue
+                around the cells. Across 1,274 primary tumors and six GI cancers, no somatic
+                mutation reached significance in any cohort — and the cohorts were
+                well-powered, so that null is informative. The phenotype is microenvironmental,
+                not genetically encoded: a shared angiogenic–fibrotic core where three of four
+                independent methods converge (cross-method <span class="stat-accent">ρ ≈ 0.5–0.6</span>).
+                It also reframes a field assumption — these tumors are immune-<em>replete</em>,
+                not immune-excluded. Cytotoxic CD8 and NK cells are not depleted and are often
+                increased; the immune compartment is reorganized, not absent. On its own the
+                program is survival-neutral (pooled <span class="stat-accent">HR 0.86, P = .11</span>);
+                prognosis tracks the net stromal-over-immune balance
+                (<span class="stat-accent">HR 1.16, P = .009</span>), not total microenvironment
+                burden (HR 0.99). I built it on a claim→script→output provenance ledger with
+                falsification tests pre-committed before execution, and it cleared independent
+                biostatistics, falsification red-team, and provenance-audit review.
+              </p>
+              <ul class="keyfindings" aria-label="Key findings">
+                <li class="keyfinding">No somatic gene reached significance in any cohort — an informative null.</li>
+                <li class="keyfinding">A shared angiogenic–fibrotic core; cross-method <span class="stat-accent">ρ ≈ 0.5–0.6</span>.</li>
+                <li class="keyfinding">Immune-replete, not immune-excluded — CD8/NK not depleted, often increased.</li>
+                <li class="keyfinding">Prognosis tracks the net stromal-over-immune balance (<span class="stat-accent">HR 1.16, P = .009</span>).</li>
+                <li class="keyfinding">External validation held under non-transcriptomic purity control (liver: <span class="stat-accent">ρ +0.37, q = 1×10⁻⁵</span>).</li>
+              </ul>
+            </li>
+
+            <!-- Paper (compartment) — sole author, Scientific Reports -->
+            <li class="paper reveal">
+              <p class="paper__status">Manuscript · under submission to Scientific Reports · 2026</p>
+              <h2 class="paper__title">
+                An Identifiability Framework for Compartment-Resolved STAT3 Attribution from
+                Bulk Tumors: the pSTAT3 "Immune-Enriched Fibrotic" Signal Is Stroma-Borne in
+                Colorectal Cancer
+              </h2>
+              <p class="venue">Scientific Reports · sole author</p>
+              <p class="authors">
+                <strong>Sean G. P. Lee</strong>
+                <span class="authors__aff">— sole author, first &amp; corresponding (Cinco Ranch High School)</span>
+              </p>
+              <p class="paper__body">
+                A bulk pSTAT3 reading can't tell whether the signal comes from the cancer cell
+                or the stroma around it — every tumor is a mixture of the two. I deconvolved
+                TCGA GI tumors against single-cell references, recovered the STAT3 program
+                separately in the malignant and stromal compartments, and asked which one carries
+                the "immune-enriched fibrotic" signal. The catch: both compartment scores come
+                from the same mixture, so they're collinear by construction, and the usual
+                partial-correlation "fix" can sign-reverse into a fake suppression effect. So I
+                gated every verdict on an explicit identifiability criterion (collinearity / VIF)
+                and read attribution from raw associations and a variance partition. The contrast
+                was identifiable in only the colorectal cohort — and there the immune signal was
+                carried about <span class="stat-accent">twice as strongly</span> by stromal STAT3,
+                with measured pSTAT3 tracking cancer-associated-fibroblast abundance. Bulk pSTAT3
+                in GI cancers marks a STAT3-active microenvironment, not a tumor-cell-autonomous
+                program.
+              </p>
+              <ul class="keyfindings" aria-label="Key findings">
+                <li class="keyfinding">1,116 tumors across 5 GI cohorts; deconvolution validated by pseudobulk recovery, an orthogonal NNLS method, and ESTIMATE purity.</li>
+                <li class="keyfinding">Malignant-vs-stromal STAT3 was identifiable in only 1 of 5 cohorts — collinearity (<span class="stat-accent">VIF up to 21</span>) made the rest unidentifiable.</li>
+                <li class="keyfinding">In colorectal, the immune association was ~2× stronger for stromal than malignant STAT3 (<span class="stat-accent">raw ρ 0.46 vs 0.24</span>).</li>
+                <li class="keyfinding">Partial correlations sign-reversed under collinearity (<span class="stat-accent">+0.24 → −0.31</span>) — a net-suppression artifact, not biology.</li>
+                <li class="keyfinding">Robust to gene set, deconvolution setting, abundance residualization, and leave-one-out (all 462 colorectal patients).</li>
+              </ul>
+            </li>
+
+            <!-- Paper B — conference poster -->
+            <li class="paper reveal">
+              <p class="paper__status">Conference poster · first author · 2026</p>
+              <h2 class="paper__title">
+                A Novel 6-Gene pSTAT3 Transcriptomic Score Identifies an Immunosuppressive,
+                Chemotherapy-Resistant Phenotype and Predicts Poor Survival in Biliary Tract Cancer
+              </h2>
+              <p class="venue">Cholangiocarcinoma Foundation 2026 Annual Conference</p>
+              <p class="authors">
+                <strong>Sean GP Lee</strong> <span class="authors__aff">(Cinco Ranch High School)</span>,
+                Mohamed Nuh, Monica Hsiang, Akhila Madulapalli Reddy
+                <span class="authors__aff">(Baylor College of Medicine)</span>,
+                Sunyoung Lee <span class="authors__aff">(MD Anderson Cancer Center)</span>
+              </p>
+              <p class="paper__body">
+                As first author, I led a 6-gene pSTAT3 activity score, validated against
+                protein-level STAT3 phosphorylation measured by RPPA
+                (<span class="stat-accent">R = 0.498, p = 0.005</span>). Applied to 198 biliary
+                tract cancer patients, a high score predicted significantly worse
+                progression-free and overall survival across all stages. High-score tumors
+                showed an immunosuppressive, chemotherapy-resistant microenvironment —
+                including reduced SLC29A1, a plausible gemcitabine-resistance route — and
+                first-line chemo-immunotherapy did not rescue prognosis.
+              </p>
+              <div class="genepanel">
+                <span class="genepanel__label">Score genes</span>
+                <ul class="genechips" aria-label="Six-gene panel">
+                  <li class="genechip">SOCS3</li>
+                  <li class="genechip">BCL2</li>
+                  <li class="genechip">MYC</li>
+                  <li class="genechip">MMP9</li>
+                  <li class="genechip">HGF</li>
+                  <li class="genechip">IL6</li>
+                </ul>
+              </div>
+              <ul class="keyfindings" aria-label="Key findings">
+                <li class="keyfinding">6-gene score validated against RPPA STAT3_pY705 (<span class="stat-accent">R = 0.498</span>).</li>
+                <li class="keyfinding">High score predicts worse PFS and OS across all stages.</li>
+                <li class="keyfinding">Reduced SLC29A1 — a candidate gemcitabine-resistance mechanism.</li>
+                <li class="keyfinding">Microenvironment profiled with 29 Bagaev immune signatures.</li>
+              </ul>
+              <figure class="shot reveal">
+                <img src="images/ccf-poster.jpg" alt="The first-author pSTAT3 biliary tract cancer poster presented at the CCF 2026 Annual Conference." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
+                <figcaption class="shot__cap">The presented poster — CCF 2026 Annual Conference.</figcaption>
+              </figure>
+            </li>
+
+            <!-- Paper C — current work -->
+            <li class="paper reveal">
+              <p class="paper__status">Current work · in progress</p>
+              <h2 class="paper__title paper__title--sm">FGF19–FGFR4 signaling axis</h2>
+              <p class="venue">MD Anderson · research mentorship</p>
+              <p class="paper__body">
+                Investigating the FGF19–FGFR4 axis to identify novel therapeutic targets in
+                GI cancers. Same approach as before: build the model, run the analysis, and
+                assume it's lying to me until it survives falsification.
+              </p>
+            </li>
+          </ol>
+
+          <p class="methods-foot reveal">
+            Stack: R&nbsp;4.6 / Bioconductor&nbsp;3.23, Python, GSVA, MCP-counter, Spatial
+            EcoTyper, Cox / Kaplan–Meier survival modeling. Discovery on the TCGA PanCancer
+            Atlas; validation on CPTAC proteogenomic cohorts. The organ-conditional direction
+            (adverse in luminal upper-GI, favorable in hepatobiliary) is a stated testable
+            prediction, not yet demonstrated.
+          </p>
+
+          <ul class="tagrow reveal" aria-label="Focus areas">
+            <li class="tag">multi-omics</li>
+            <li class="tag">tumor microenvironment</li>
+            <li class="tag">GI oncology</li>
+            <li class="tag">survival modeling</li>
+            <li class="tag">reproducible provenance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 — THE RECORD ============ -->
+    <section class="section record" id="record" aria-labelledby="record-claim">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"><span class="rail__num">02</span></div>
+        <div class="section__content">
+          <p class="section__kicker reveal"><span class="section__kicker-num">02</span> The record</p>
+
+          <p class="record__claim reveal" id="record-claim">
+            The youngest presenter — and the <em>only high schooler</em> — in the documented
+            history of the Cholangiocarcinoma Foundation Annual Conference.
+          </p>
+
+          <p class="record__body reveal">
+            The documented record shows no undergraduate or high-school presenters before me.
+            I cleared that line as a first author. Verifiable from the conference's recorded record.
+          </p>
+
+          <p class="record__caption reveal">Class of 2028 · Cinco Ranch High School</p>
+
+          <div class="shotrow reveal">
+            <figure class="shot">
+              <img src="images/ccf-ballroom.jpg" alt="The Grand Ballroom entrance at the Cholangiocarcinoma Foundation 2026 Annual Conference." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
+              <figcaption class="shot__cap">CCF 2026 Annual Conference — the Grand Ballroom.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="images/ccf-badge.jpg" alt="Sean Lee's Cholangiocarcinoma Foundation 2026 Annual Conference badge — Katy, Texas." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
+              <figcaption class="shot__cap">My conference credential.</figcaption>
+            </figure>
+          </div>
+
+          <ol class="entries reveal" aria-label="Roles and recognitions">
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Research Intern · MD Anderson Cancer Center</h3>
+                <span class="entry__period">Jan 2024 – present</span>
+              </div>
+              <p class="entry__role">Research mentorship · GI Medical Oncology</p>
+              <p class="entry__body">
+                ~2.5 years, remote. Transcriptomic profiling and molecular pathways in biliary
+                tract cancer; lead and first author. Cross-institutional collaboration with
+                Baylor College of Medicine.
+              </p>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">First-author poster · Cholangiocarcinoma Foundation Annual Conference</h3>
+                <span class="entry__period">2026</span>
+              </div>
+              <p class="entry__role">Youngest presenter on record</p>
+              <p class="entry__body">
+                A 6-gene pSTAT3 transcriptomic score predicting poor survival in biliary tract
+                cancer (n&nbsp;=&nbsp;198). The presented poster of record.
+              </p>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Clinical Research Apprentice · MD Anderson Cancer Center</h3>
+                <span class="entry__period">Dec 2025 – present</span>
+              </div>
+              <p class="entry__role">Shadowing an Associate Professor · GI Medical Oncology</p>
+              <p class="entry__body">
+                Shadowing a top patient-care provider in direct patient care, and connecting
+                with specialized medical oncologists.
+              </p>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Poster Presenter · ESMO Annual Congress</h3>
+                <span class="entry__period">2027 · upcoming</span>
+              </div>
+              <p class="entry__role">Singapore · MD Anderson travel grant</p>
+              <p class="entry__body">
+                Presenting "Tumor Phospho-STAT3 Marks a Shared Angiogenic–Fibrotic,
+                Immune-Replete Microenvironment Across Gastrointestinal Cancers: A Multi-Omic
+                Analysis of 1,274 Tumors."
+              </p>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Poster Presenter · AACR Annual Meeting</h3>
+                <span class="entry__period">2027 · upcoming</span>
+              </div>
+              <p class="entry__role">With MD Anderson Cancer Center · travel grant</p>
+              <p class="entry__body">
+                Poster presentation, with MD Anderson Cancer Center; travel supported by an
+                MD Anderson travel grant.
+              </p>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Returning Presenter · Cholangiocarcinoma Foundation Annual Conference</h3>
+                <span class="entry__period">2027 · upcoming</span>
+              </div>
+              <p class="entry__role">Hepatocellular carcinoma</p>
+              <p class="entry__body">
+                Returning to CCF to present new work on hepatocellular carcinoma.
+              </p>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">DAVAonco Conference · Bermuda</h3>
+                <span class="entry__period">By invitation</span>
+              </div>
+              <p class="entry__role">Shadowed the invited MD Anderson faculty</p>
+              <p class="entry__body">
+                One MD Anderson faculty member is invited to present each year; I attended
+                alongside the faculty I shadow.
+              </p>
+            </li>
+          </ol>
+
+          <ul class="tagrow reveal" aria-label="Focus areas">
+            <li class="tag">first author</li>
+            <li class="tag">biliary tract cancer</li>
+            <li class="tag">computational oncology</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 — THE RESEARCH BRAIN ============ -->
+    <section class="section section--alt" id="brain" aria-labelledby="brain-title">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"><span class="rail__num">03</span></div>
+        <div class="section__content">
+          <p class="section__kicker reveal"><span class="section__kicker-num">03</span> A system I built</p>
+          <h2 class="section__title reveal" id="brain-title">The Research Brain</h2>
+
+          <p class="section__lede reveal">
+            I built the best research partner I've ever had by assuming it's lying to me. It's
+            an AI research system layered over a ~1,300-note knowledge base on hepatobiliary and
+            pan-GI oncology, genomics, and drug development. It carried one genomics manuscript
+            to submission.
+          </p>
+
+          <div class="statstrip statstrip--4 reveal" role="group" aria-label="Knowledge base at a glance">
+            <div class="statstrip__cell">
+              <span class="statstrip__num">~1,300</span>
+              <span class="statstrip__label">Notes / concepts</span>
+            </div>
+            <div class="statstrip__cell">
+              <span class="statstrip__num">~30,000</span>
+              <span class="statstrip__label">Links</span>
+            </div>
+            <div class="statstrip__cell">
+              <span class="statstrip__num">~3,000</span>
+              <span class="statstrip__label">Methods &amp; datasets</span>
+            </div>
+            <div class="statstrip__cell">
+              <span class="statstrip__num">4,000+</span>
+              <span class="statstrip__label">Papers, every one web-verified</span>
+            </div>
+          </div>
+
+          <figure class="shot reveal">
+            <img src="images/research-brain.png" alt="Graph view of Sean's research vault — hundreds of interlinked notes on GI oncology, genomics, and drug development." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
+            <figcaption class="shot__cap">The vault's graph view — every node a note, every line a verified link.</figcaption>
+          </figure>
+
+          <blockquote class="thesis reveal">
+            Everyone's racing to make AI smarter. In cancer research, smarter was never the
+            problem — one fabricated number isn't a typo, it's a retraction. So I built mine to
+            be accountable instead.
+          </blockquote>
+
+          <div class="brain-prose reveal">
+            <p>
+              The accountability isn't a prompt. It's machinery: Claude Code hooks, custom
+              agents, and slash commands that won't let a claim through unless it survives them.
+              Built with custom agents — <strong>biostatistician</strong>,
+              <strong>citation-verifier</strong>, <strong>falsification-red-team</strong>,
+              <strong>provenance-auditor</strong>, <strong>manuscript-drafter</strong>,
+              <strong>literature-scout</strong> — and commands <strong>/qc</strong>,
+              <strong>/verify-claim</strong>, and <strong>/falsify</strong>.
+            </p>
+          </div>
+
+          <ol class="principles reveal" aria-label="Design principles">
+            <li class="principle">
+              <p class="principle__k">Provenance or it didn't happen</p>
+              <p class="principle__v">It can't state a result without pointing to the file that produced it — a claim→script→output ledger.</p>
+            </li>
+            <li class="principle">
+              <p class="principle__k">Verified or stamped unverified</p>
+              <p class="principle__v">Every citation is web-verified or marked "unverified." No middle ground.</p>
+            </li>
+            <li class="principle">
+              <p class="principle__k">Confidence is earned</p>
+              <p class="principle__v">Nothing is called "confident" until a separate red-team agent has tried, and failed, to falsify it.</p>
+            </li>
+            <li class="principle">
+              <p class="principle__k">No hype, by construction</p>
+              <p class="principle__v">Effect sizes, confidence intervals, and multiple-testing correction enforced as I write.</p>
+            </li>
+            <li class="principle">
+              <p class="principle__k">QC on every edit</p>
+              <p class="principle__v">A PostToolUse hook flags a missing result file, an unverified DOI, or drift between a note's numbers and the ledger — as I type.</p>
+            </li>
+          </ol>
+
+          <p class="brain-close reveal">
+            Could it still hallucinate? Of course. The difference is mine has to get past a
+            system built to assume it will.
+          </p>
+
+          <ul class="tagrow reveal" aria-label="Built with">
+            <li class="tag">Claude Code</li>
+            <li class="tag">provenance ledger</li>
+            <li class="tag">falsification red-team</li>
+            <li class="tag">citation verification</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 — BUILT ============ -->
+    <section class="section" id="built" aria-labelledby="built-title">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"><span class="rail__num">04</span></div>
+        <div class="section__content">
+          <p class="section__kicker reveal"><span class="section__kicker-num">04</span> Built</p>
+          <h2 class="section__title reveal" id="built-title">Things I've built</h2>
+
+          <p class="section__lede reveal">
+            A self-funded business, a nonprofit cutting costs for cancer patients, and a
+            student org that helps members secure spots in real research positions.
+          </p>
+
+          <ol class="entries reveal" aria-label="Ventures">
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Self-funded business</h3>
+                <span class="entry__period">Ongoing</span>
+              </div>
+              <p class="entry__role">Founder</p>
+              <p class="entry__body">
+                I run a photography business with <strong>200+ clients</strong>, and have turned
+                reselling, photography, and building websites into $35,000+ in net profit —
+                bootstrapped, no outside capital. Entrepreneurial from a young age.
+              </p>
+              <span class="entry__stat">200+ clients · $35,000+ net profit</span>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Throughway</h3>
+                <span class="entry__period">Apr 2026 – present</span>
+              </div>
+              <p class="entry__role">CFO &amp; Co-Founder</p>
+              <p class="entry__body">
+                A nonprofit reducing financial toxicity and improving insurance access for
+                cancer patients. We work directly with the MD Anderson Financial Clearance
+                Center. I'm using MD Anderson and Cholangiocarcinoma Foundation connections to
+                expand partnerships and the donor network, with growth planned around the CCF
+                2027 Annual Conference.
+              </p>
+              <span class="entry__stat">Works directly with the MD Anderson Financial Clearance Center</span>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title"><a class="entry__titlelink" href="https://cancerresearchsociety.science/" target="_blank" rel="noopener">Cinco Ranch High Cancer Research Society <span class="entry__ext" aria-hidden="true">&#8599;</span></a></h3>
+                <span class="entry__period">May 2026 – present</span>
+              </div>
+              <p class="entry__role">President &amp; Founder</p>
+              <p class="entry__body">
+                I founded and lead a student org — now <strong>120+ members</strong> — that
+                connects aspiring researchers with real cancer-research opportunities. I mentor
+                members through the full process: developing ideas, cold-emailing professors and
+                PIs, building relationships. 25+ have already secured research positions at
+                Stanford, Yale, MIT, MD Anderson, Google, and UT — across psychology,
+                neuroscience, cancer, and virology, from incoming freshmen to college
+                undergraduates.
+              </p>
+              <span class="entry__stat">120+ members · 25+ placed in research</span>
+              <a class="entry__link" href="https://cancerresearchsociety.science/" target="_blank" rel="noopener">cancerresearchsociety.science <span aria-hidden="true">&#8599;</span></a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 — APPROACH ============ -->
+    <section class="section section--alt" id="approach" aria-labelledby="approach-title">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"><span class="rail__num">05</span></div>
+        <div class="section__content">
+          <p class="section__kicker reveal"><span class="section__kicker-num">05</span> About</p>
+          <h2 class="section__title reveal" id="approach-title">Who's building this</h2>
+
+          <div class="prose reveal">
+            <p>
+              I'm a rising junior at Cinco Ranch High School, focused on translational oncology
+              and computational biology. I started independent cancer research at <strong>14</strong> —
+              and have since been first author on cancer-genomics work, collaborating directly
+              with an associate professor at MD Anderson Cancer Center, three researchers at
+              Baylor College of Medicine, and the University of Houston.
+            </p>
+            <p>
+              My work spans biliary tract cancer, hepatocellular carcinoma, and NSCLC radiomics.
+              The work is real: I write the code, build the models, and run the analysis on
+              patient genomic data — still in high school, still building.
+            </p>
+            <p>
+              I believe the gap between data and clinical impact should be smaller than it is.
+              Everything I build is pointed at that gap.
+            </p>
+          </div>
+
+          <figure class="shot reveal">
+            <img src="images/approach-conference.jpg" alt="Sean working on his analysis on a laptop in a conference hall." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
+            <figcaption class="shot__cap">Between sessions — running the analysis on-site.</figcaption>
+          </figure>
+
+          <ul class="tagrow reveal" aria-label="Focus areas">
+            <li class="tag">cancer genomics</li>
+            <li class="tag">bioinformatics</li>
+            <li class="tag">tumor immunology</li>
+            <li class="tag">survival modeling</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 — SKILLS & METHODS ============ -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"><span class="rail__num">06</span></div>
+        <div class="section__content">
+          <p class="section__kicker reveal"><span class="section__kicker-num">06</span> Skills &amp; methods</p>
+          <h2 class="section__title reveal" id="skills-title">Skills &amp; Methods</h2>
+
+          <p class="section__lede reveal">
+            The stack I use to take patient genomic data from raw matrix to first-author result.
+          </p>
+
+          <div class="skillgrid reveal">
+            <div class="skillgroup">
+              <p class="skillgroup__label">Languages &amp; tools</p>
+              <ul class="skillgroup__items">
+                <li>Python</li><li>R</li><li>Bioconductor</li><li>NumPy</li>
+                <li>Pandas</li><li>scikit-learn</li><li>SimpleITK</li>
+              </ul>
+            </div>
+            <div class="skillgroup">
+              <p class="skillgroup__label">Genomics &amp; bioinformatics</p>
+              <ul class="skillgroup__items">
+                <li>TCGA data analysis</li><li>RPPA proteomics</li><li>Transcriptomic analysis</li>
+                <li>GSVA</li><li>MCP-counter</li><li>Spatial EcoTyper</li>
+              </ul>
+            </div>
+            <div class="skillgroup">
+              <p class="skillgroup__label">Statistics &amp; survival</p>
+              <ul class="skillgroup__items">
+                <li>Survival modeling</li><li>Kaplan–Meier</li><li>Cox proportional hazards</li>
+                <li>Biostatistics</li><li>Multiple-testing correction</li>
+              </ul>
+            </div>
+            <div class="skillgroup">
+              <p class="skillgroup__label">Imaging &amp; radiomics</p>
+              <ul class="skillgroup__items">
+                <li>PyRadiomics</li><li>GLCM radiomics</li><li>3D Slicer</li>
+              </ul>
+            </div>
+            <div class="skillgroup">
+              <p class="skillgroup__label">Domains</p>
+              <ul class="skillgroup__items">
+                <li>Computational biology</li><li>Cancer genomics</li><li>Tumor immunology</li>
+              </ul>
+            </div>
+            <div class="skillgroup">
+              <p class="skillgroup__label">Communication</p>
+              <ul class="skillgroup__items">
+                <li>Research writing</li><li>Manuscript preparation</li><li>Public speaking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07 — BEYOND RESEARCH ============ -->
+    <section class="section section--alt" id="community" aria-labelledby="community-title">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"><span class="rail__num">07</span></div>
+        <div class="section__content">
+          <p class="section__kicker reveal"><span class="section__kicker-num">07</span> Beyond research</p>
+          <h2 class="section__title reveal" id="community-title">Beyond research</h2>
+
+          <p class="section__lede reveal">
+            Research is most of my time, not all of it. Here is the rest.
+          </p>
+
+          <ol class="entries reveal" aria-label="Community and volunteering">
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Student Volunteer</h3>
+                <span class="entry__period">Jun – Jul 2025</span>
+              </div>
+              <p class="entry__role">Texas Children's Hospital</p>
+              <p class="entry__body">
+                Accepted at 4.3% (1 of 13); I assisted nurses and staff, delivered supplies,
+                and transported patients.
+              </p>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Musician</h3>
+                <span class="entry__period">May 2025 – present</span>
+              </div>
+              <p class="entry__role">Music for Medicine</p>
+              <p class="entry__body">
+                I perform live music for elderly residents at care homes and assisted-living
+                facilities.
+              </p>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Teaching Assistant</h3>
+                <span class="entry__period">Aug 2024 – present</span>
+              </div>
+              <p class="entry__role">KCPCH Korean School</p>
+            </li>
+            <li class="entry">
+              <div class="entry__top">
+                <h3 class="entry__title">Volunteer</h3>
+                <span class="entry__period">Jun – Aug 2025</span>
+              </div>
+              <p class="entry__role">Hope Plus Project / Hope to the Future Association</p>
+              <p class="entry__body">
+                I designed SDG-themed shoes supporting children's health rights in South Sudan,
+                certified by the Undersecretary of the Ministry of Youth and Sports, Republic of
+                South Sudan (ref. HFA-25020043).
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 08 — CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"><span class="rail__num">08</span></div>
+        <div class="section__content">
+          <p class="section__kicker reveal"><span class="section__kicker-num">08</span> Contact</p>
+          <h2 class="section__title sr-only" id="contact-title">Contact</h2>
+
+          <p class="contact__lede reveal">
+            Reach out directly — collaboration, a question about the work, or just to talk. Email is best.
+          </p>
+
+          <a class="contact__email reveal" href="mailto:seangplee@gmail.com">seangplee@gmail.com</a>
+
+          <ul class="contact__links reveal" aria-label="Elsewhere">
+            <li><a href="https://www.linkedin.com/in/sean-lee-ab5645383/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&#8599;</span></a></li>
+          </ul>
+
+          <div class="colophon">
+            <span class="colophon__mono" aria-hidden="true">SL</span>
+            <p class="colophon__line">Sean GP Lee · Katy, Texas · <span id="year">2026</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
