@@ -259,7 +259,118 @@
     });
   });
 
-  /* ----- 6. Copyright year --------------------------------------------- */
+  /* ----- 6. Photo blur-up: fade each photo in once it has decoded ------- */
+
+  var photoImgs = Array.prototype.slice.call(
+    document.querySelectorAll(".photo__img")
+  );
+  photoImgs.forEach(function (img) {
+    if (prefersReducedMotion) {
+      img.classList.add("is-loaded");
+      return;
+    }
+    if (img.complete && img.naturalWidth > 0) {
+      img.classList.add("is-loaded");
+    } else {
+      var done = function () { img.classList.add("is-loaded"); };
+      img.addEventListener("load", done, { once: true });
+      img.addEventListener("error", done, { once: true });
+    }
+  });
+
+  /* ----- 7. Light parallax on feature photos (transform-only, rAF) ------ */
+
+  var parallaxEls = Array.prototype.slice.call(
+    document.querySelectorAll("[data-parallax]")
+  );
+  var canParallax =
+    parallaxEls.length &&
+    !prefersReducedMotion &&
+    window.matchMedia("(min-width: 721px)").matches;
+  var parallaxTicking = false;
+
+  function applyParallax() {
+    var vh = window.innerHeight;
+    parallaxEls.forEach(function (el) {
+      var frame = el.parentElement; /* .photo__frame */
+      var rect = frame.getBoundingClientRect();
+      if (rect.bottom < -200 || rect.top > vh + 200) return; /* offscreen */
+      var speed = parseFloat(el.getAttribute("data-parallax")) || 0.8;
+      /* progress: ~-1 entering from below, 0 centered, ~1 leaving up top */
+      var progress = (rect.top + rect.height / 2 - vh / 2) / vh;
+      var t = -progress * speed;
+      if (t > 1) t = 1;
+      else if (t < -1) t = -1;
+      var maxShift = rect.height * 0.07; /* stays inside the 8% overscan */
+      el.style.transform = "translate3d(0," + (t * maxShift).toFixed(1) + "px,0)";
+    });
+    parallaxTicking = false;
+  }
+  function requestParallax() {
+    if (!parallaxTicking) {
+      parallaxTicking = true;
+      requestAnimationFrame(applyParallax);
+    }
+  }
+  if (canParallax) {
+    window.addEventListener("scroll", requestParallax, { passive: true });
+    window.addEventListener("resize", requestParallax);
+    applyParallax();
+  }
+
+  /* ----- 8. Hero intro: sequence the hero in once styles are applied ---- */
+
+  function markPageLoaded() {
+    document.body.classList.add("is-loaded");
+  }
+  if (prefersReducedMotion) {
+    markPageLoaded();
+  } else {
+    /* Double rAF so the initial hidden state paints before the transition. */
+    requestAnimationFrame(function () {
+      requestAnimationFrame(markPageLoaded);
+    });
+    /* Safety net: never leave the hero stuck hidden. */
+    setTimeout(markPageLoaded, 1000);
+  }
+
+  /* ----- 9. Lenis smooth scroll (optional, progressive enhancement) ----- */
+
+  var lenis = null;
+  if (!prefersReducedMotion && typeof window.Lenis === "function") {
+    lenis = new window.Lenis({
+      duration: 1.05,
+      smoothWheel: true,
+      smoothTouch: false
+    });
+    var lenisRaf = function (time) {
+      lenis.raf(time);
+      requestAnimationFrame(lenisRaf);
+    };
+    requestAnimationFrame(lenisRaf);
+
+    /* Route in-page anchor clicks through Lenis, offset for the fixed bar. */
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      var hash = link.getAttribute("href");
+      if (!hash || hash.length < 2) return;
+      var target = document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -(parseInt(var_barH(), 10) || 56) });
+      if (history.pushState) history.pushState(null, "", hash);
+    });
+  }
+
+  function var_barH() {
+    return getComputedStyle(document.documentElement)
+      .getPropertyValue("--bar-h")
+      .trim()
+      .replace("px", "");
+  }
+
+  /* ----- 10. Copyright year -------------------------------------------- */
 
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());

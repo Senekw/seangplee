@@ -77,18 +77,18 @@
     <section class="hero" aria-labelledby="hero-name">
       <div class="shell">
         <div class="rail" aria-hidden="true"><span class="rail__num">00</span></div>
-        <div class="hero__content reveal">
-          <p class="hero__badge">Co-founder, Sutura Genomics · YC Startup School 2026</p>
-          <p class="eyebrow">Computational cancer biology · Katy, Texas</p>
-          <h1 class="hero__name" id="hero-name">Sean Lee</h1>
-          <p class="hero__sub">
+        <div class="hero__content">
+          <p class="hero__badge hero-in">Co-founder, Sutura Genomics · YC Startup School 2026</p>
+          <p class="eyebrow hero-in">Computational cancer biology · Katy, Texas</p>
+          <h1 class="hero__name hero-in" id="hero-name">Sean Lee</h1>
+          <p class="hero__sub hero-in">
             I build computational models of cancer from patient genomic data and present
             them as first author. I started independent cancer research at 14, working under
             an associate professor at MD Anderson — writing the code, building the models,
             running the analysis.
           </p>
 
-          <dl class="metarow">
+          <dl class="metarow hero-in">
             <div class="metarow__cell">
               <dt>Location</dt>
               <dd>Katy, Texas</dd>
@@ -103,7 +103,7 @@
             </div>
           </dl>
 
-          <div class="statstrip" role="group" aria-label="Key figures">
+          <div class="statstrip hero-in" role="group" aria-label="Key figures">
             <div class="statstrip__cell">
               <span class="statstrip__num">1,274</span>
               <span class="statstrip__label">Tumors in my largest study</span>
@@ -118,10 +118,24 @@
             </div>
           </div>
 
-          <a class="readlink" href="#sutura">Read the work <span aria-hidden="true">&#8595;</span></a>
+          <a class="readlink hero-in" href="#sutura">Read the work <span aria-hidden="true">&#8595;</span></a>
         </div>
       </div>
     </section>
+
+    <!-- Full-bleed hero band: the strongest frame, with a curtain reveal. -->
+    <figure class="heroband photo reveal curtain" style="--ar: 12 / 5; --ar-mobile: 4 / 3; --pos: center 62%;">
+      <div class="photo__frame">
+        <div class="photo__parallax" data-parallax="0.9">
+          <span class="photo__lqip" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABcQERQRDhcUEhQaGBcbIjklIh8fIkYyNSk5UkhXVVFIUE5bZoNvW2F8Yk5QcptzfIeLkpSSWG2grJ+OqoOPko3/2wBDARgaGiIeIkMlJUONXlBejY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY3/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMFAgT/xAAfEAACAgMAAgMAAAAAAAAAAAABAgARAwQhEjFBUZH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMaLsqD6BE79vO51aJFDtH5kzHa41NnouMzZSdVrUcX3fZisnOQclID4gUL7CTsieTklm/YQKv/Z)"></span>
+          <picture>
+            <source type="image/webp" srcset="images/hero-roses.webp" />
+            <img class="photo__img" src="images/hero-roses.jpg" width="2400" height="1600" alt="Wild roses in soft focus against a hazy, backlit woodland and a quiet stream." loading="eager" fetchpriority="high" decoding="async" onerror="this.closest('.heroband').style.display='none'" />
+          </picture>
+        </div>
+      </div>
+      <figcaption class="shot__cap">Wild roses, morning light — patience as a way of working.</figcaption>
+    </figure>
 
     <!-- ============ 01 — SUTURA GENOMICS (flagship) ============ -->
     <section class="section" id="sutura" aria-labelledby="sutura-title">
@@ -506,6 +520,19 @@
             roles where I write the code and run the analysis.
           </p>
 
+          <figure class="shot photo reveal" style="--ar: 21 / 9; --pos: center 55%;">
+            <div class="photo__frame">
+              <div class="photo__parallax" data-parallax="1">
+                <span class="photo__lqip" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDABcQERQRDhcUEhQaGBcbIjklIh8fIkYyNSk5UkhXVVFIUE5bZoNvW2F8Yk5QcptzfIeLkpSSWG2grJ+OqoOPko3/2wBDARgaGiIeIkMlJUONXlBejY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY3/wAARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQDBf/EACIQAAEDAwMFAAAAAAAAAAAAAAEAAgMREhMEBSEiMVFxkf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/AMjDtmJmLWRl5HIPCklghNbJYz6cuNcUuNO6S0xW+JoceofUUdT5RNMf/9k=)"></span>
+                <picture>
+                  <source type="image/webp" srcset="images/experience-canyon.webp" />
+                  <img class="photo__img" src="images/experience-canyon.jpg" width="2200" height="1467" alt="A wide canyon vista at low sun — layered ridgelines receding into the gorge." loading="lazy" decoding="async" onerror="this.closest('.shot').classList.add('is-missing')" />
+                </picture>
+              </div>
+            </div>
+            <figcaption class="shot__cap">Wide open — the long view I keep coming back to.</figcaption>
+          </figure>
+
           <ol class="entries reveal" aria-label="Work experience">
             <li class="entry">
               <div class="entry__top">
@@ -747,7 +774,20 @@
             </p>
           </div>
 
-          <ol class="principles reveal" aria-label="Design principles">
+          <div class="feature-split">
+            <figure class="shot photo feature-split__media reveal" style="--ar: 3 / 4; --pos: center;">
+              <div class="photo__frame">
+                <div class="photo__parallax">
+                  <span class="photo__lqip" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDABcQERQRDhcUEhQaGBcbIjklIh8fIkYyNSk5UkhXVVFIUE5bZoNvW2F8Yk5QcptzfIeLkpSSWG2grJ+OqoOPko3/2wBDARgaGiIeIkMlJUONXlBejY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY3/wAARCAAUAA0DASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAIRAAAgEDAwUAAAAAAAAAAAAAAAECAwQTBRExEhVBgcH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMOlZSp6PPUN9254opeE+X8ICqN9PtcrFpdGTIn64JAoAAj/2Q==)"></span>
+                  <picture>
+                    <source type="image/webp" srcset="images/brain-canyon.webp" />
+                    <img class="photo__img" src="images/brain-canyon.jpg" width="1200" height="1800" alt="Looking up out of a red sandstone slot canyon toward a sliver of sky." loading="lazy" decoding="async" onerror="this.closest('.shot').classList.add('is-missing')" />
+                  </picture>
+                </div>
+              </div>
+              <figcaption class="shot__cap">A way out, carved in stone — structure found under pressure.</figcaption>
+            </figure>
+          <ol class="principles feature-split__body reveal" aria-label="Design principles">
             <li class="principle">
               <p class="principle__k">Provenance or it didn't happen</p>
               <p class="principle__v">It can't state a result without pointing to the file that produced it — a claim→script→output ledger.</p>
@@ -769,6 +809,7 @@
               <p class="principle__v">A PostToolUse hook flags a missing result file, an unverified DOI, or drift between a note's numbers and the ledger — as I type.</p>
             </li>
           </ol>
+          </div>
 
           <p class="brain-close reveal">
             Could it still hallucinate? Of course. The difference is mine has to get past a
@@ -826,6 +867,19 @@
               Everything I build is pointed at that gap.
             </p>
           </div>
+
+          <figure class="shot photo reveal" style="--ar: 3 / 2; --pos: center;">
+            <div class="photo__frame">
+              <div class="photo__parallax" data-parallax="0.8">
+                <span class="photo__lqip" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDABcQERQRDhcUEhQaGBcbIjklIh8fIkYyNSk5UkhXVVFIUE5bZoNvW2F8Yk5QcptzfIeLkpSSWG2grJ+OqoOPko3/2wBDARgaGiIeIkMlJUONXlBejY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY3/wAARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAwACBv/EAB4QAAICAgIDAAAAAAAAAAAAAAECABEDEiExBBMi/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOZxYPajMGWwa125M3m8TJgK70NgDV3xBxrdm6qMxbH03cAGUg1KIfrkygf/2Q==)"></span>
+                <picture>
+                  <source type="image/webp" srcset="images/approach-light.webp" />
+                  <img class="photo__img" src="images/approach-light.jpg" width="2000" height="1333" alt="A single sprig of white flowers catching a shaft of low light against a dark surface." loading="lazy" decoding="async" onerror="this.closest('.shot').classList.add('is-missing')" />
+                </picture>
+              </div>
+            </div>
+            <figcaption class="shot__cap">Found light — attention is the whole job.</figcaption>
+          </figure>
 
           <figure class="shot reveal">
             <img src="images/approach-conference.jpg" alt="Sean working on his analysis on a laptop in a conference hall." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
@@ -911,6 +965,19 @@
             Research is most of my time, not all of it. Here is the rest.
           </p>
 
+          <figure class="shot photo reveal" style="--ar: 16 / 9; --pos: center 45%;">
+            <div class="photo__frame">
+              <div class="photo__parallax" data-parallax="0.9">
+                <span class="photo__lqip" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABcQERQRDhcUEhQaGBcbIjklIh8fIkYyNSk5UkhXVVFIUE5bZoNvW2F8Yk5QcptzfIeLkpSSWG2grJ+OqoOPko3/2wBDARgaGiIeIkMlJUONXlBejY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY3/wAARCAAUAA8DASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAEDAgb/xAAeEAACAgEFAQAAAAAAAAAAAAABAwACEgQRITFRYf/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/EABcRAQEBAQAAAAAAAAAAAAAAAAAhEUH/2gAMAwEAAhEDEQA/AOdTo3uIrSo5+zbNExNsb3HHkilr8wF3O56jYxuRF77kdzN0xJNjVtSPY22NmEn2EI9T/9k=)"></span>
+                <picture>
+                  <source type="image/webp" srcset="images/community-sunset.webp" />
+                  <img class="photo__img" src="images/community-sunset.jpg" width="1350" height="1800" alt="The sun low over a dark headland, a luminous golden reflection on the sea." loading="lazy" decoding="async" onerror="this.closest('.shot').classList.add('is-missing')" />
+                </picture>
+              </div>
+            </div>
+            <figcaption class="shot__cap">Last light over the water.</figcaption>
+          </figure>
+
           <ol class="entries reveal" aria-label="Community and volunteering">
             <li class="entry">
               <div class="entry__top">
@@ -966,6 +1033,19 @@
           <p class="section__kicker reveal"><span class="section__kicker-num">09</span> Contact</p>
           <h2 class="section__title sr-only" id="contact-title">Contact</h2>
 
+          <figure class="shot photo reveal" style="--ar: 4 / 5; --pos: center; max-width: 440px;">
+            <div class="photo__frame">
+              <div class="photo__parallax" data-parallax="0.7">
+                <span class="photo__lqip" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABcQERQRDhcUEhQaGBcbIjklIh8fIkYyNSk5UkhXVVFIUE5bZoNvW2F8Yk5QcptzfIeLkpSSWG2grJ+OqoOPko3/2wBDARgaGiIeIkMlJUONXlBejY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY3/wAARCAAUAA8DASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBP/EABwQAAICAgIDAAAAAAAAAAAAAAECAAMRQSIxMv/EABYBAQEBAAAAAAAAAAAAAAAAAAQCA//EABcRAQEBAQAAAAAAAAAAAAAAAAARIQH/2gAMAwEAAhEDEQA/AEVZTBbjWRncSyg21MgYqSOxqaa6wvkYitoOShRKqIQls+v/2Q==)"></span>
+                <picture>
+                  <source type="image/webp" srcset="images/contact-persimmon.webp" />
+                  <img class="photo__img" src="images/contact-persimmon.jpg" width="1500" height="2000" alt="A single ripe persimmon hanging from a bare branch against an open sky." loading="lazy" decoding="async" onerror="this.closest('.shot').classList.add('is-missing')" />
+                </picture>
+              </div>
+            </div>
+            <figcaption class="shot__cap">One fruit, open sky — restraint, on purpose.</figcaption>
+          </figure>
+
           <p class="contact__lede reveal">
             Reach out directly — collaboration, a question about the work, or just to talk. Email is best.
           </p>
@@ -986,6 +1066,7 @@
 
   </main>
 
+  <script src="vendor/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

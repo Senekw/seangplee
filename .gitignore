@@ -7,3 +7,13 @@
 # Node / misc
 node_modules/
 *.log
+
+# Original camera-roll photos (optimized + WebP copies live in images/)
+/*.JPG
+/*.JPEG
+/*.jpg
+/*.jpeg
+/*.PNG
+/*.png
+/*.HEIC
+/*.heic
