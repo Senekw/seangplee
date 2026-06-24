@@ -232,7 +232,34 @@
     });
   }
 
-  /* ----- 5. Copyright year --------------------------------------------- */
+  /* ----- 5. Poster toggle (expand/collapse, progressive enhancement) ---- */
+
+  var posterToggles = Array.prototype.slice.call(
+    document.querySelectorAll("[data-poster-toggle]")
+  );
+  posterToggles.forEach(function (btn) {
+    var panelId = btn.getAttribute("aria-controls");
+    var panel = panelId ? document.getElementById(panelId) : null;
+    if (!panel) return;
+    var labelEl = btn.querySelector("[data-poster-label]");
+
+    /* JS is available: reveal the button and start the panel collapsed.
+       Without JS the button stays hidden and the poster shows inline. */
+    btn.hidden = false;
+    panel.classList.add("is-collapsed");
+    btn.setAttribute("aria-expanded", "false");
+
+    btn.addEventListener("click", function () {
+      var willOpen = panel.classList.contains("is-collapsed");
+      panel.classList.toggle("is-collapsed", !willOpen);
+      btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      if (labelEl) {
+        labelEl.textContent = willOpen ? "Hide the poster" : "View the poster";
+      }
+    });
+  });
+
+  /* ----- 6. Copyright year --------------------------------------------- */
 
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());

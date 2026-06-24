@@ -1254,6 +1254,47 @@ strong { font-weight: 600; }
 .shot.is-missing .shot__cap { border-top: 0; }
 .shot.is-missing .shot__cap::before { content: "▢  "; color: var(--accent); }
 
+/* ----- Poster toggle (expand/collapse, progressive enhancement) -------- */
+.poster-toggle {
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.poster-toggle:hover { border-color: var(--accent); color: var(--fg); }
+.poster-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.poster-toggle__icon {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+.poster-toggle[aria-expanded="true"] .poster-toggle__icon { transform: rotate(45deg); }
+
+/* Collapsible region — animates via grid-template-rows (0fr → 1fr). */
+.poster-panel {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.4s ease;
+}
+.poster-panel.is-collapsed { grid-template-rows: 0fr; }
+.poster-panel__inner { min-height: 0; overflow: hidden; }
+.poster-link { display: block; }
+@media (prefers-reduced-motion: reduce) {
+  .poster-panel { transition: none; }
+  .poster-toggle__icon { transition: none; }
+}
+
 /* ----- Expansion responsive (ordered after base + base media queries) --- */
 @media (max-width: 860px) {
   .statstrip--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
