@@ -11,9 +11,7 @@
   <meta name="description" content="Sean Lee — cancer-genomics researcher and co-founder of Sutura Genomics (accepted to YC Startup School 2026). First-author work across 1,274 tumors and six GI cancers; graph deep learning for spatial-transcriptomics tissue alignment." />
   <meta name="author" content="Sean GP Lee" />
 
-  <!-- Theme color tracks both modes; default (dark) listed first -->
-  <meta name="theme-color" content="#0E0E0C" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0a" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
@@ -29,13 +27,13 @@
   <meta name="twitter:title" content="Sean Lee — Computational Cancer Biology" />
   <meta name="twitter:description" content="Co-founder of Sutura Genomics (YC Startup School 2026). First-author computational oncology across 1,274 tumors and six GI cancers." />
 
-  <!-- Inline SVG data-URI favicon: boxed SL monogram, sharp corners -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%230E0E0C'/%3E%3Crect%20x='2.5'%20y='2.5'%20width='27'%20height='27'%20fill='none'%20stroke='%2313C68A'%20stroke-width='1.5'/%3E%3Ctext%20x='16'%20y='21.5'%20font-family='Georgia,serif'%20font-size='15'%20font-weight='700'%20fill='%23F4F3EC'%20text-anchor='middle'%3ESL%3C/text%3E%3C/svg%3E" />
+  <!-- Inline SVG data-URI favicon: rounded SL monogram, orange frame on black -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%230a0a0a'/%3E%3Crect%20x='2.5'%20y='2.5'%20width='27'%20height='27'%20rx='6'%20fill='none'%20stroke='%23ff5a1f'%20stroke-width='1.5'/%3E%3Ctext%20x='16'%20y='21.5'%20font-family='Arial,sans-serif'%20font-size='14'%20font-weight='800'%20fill='%23ffffff'%20text-anchor='middle'%3ESL%3C/text%3E%3C/svg%3E" />
 
-  <!-- Google Fonts: Newsreader (serif display), IBM Plex Mono (labels), Inter (body). -->
+  <!-- Manrope: a clean modern grotesk across the whole site. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -55,87 +53,48 @@
 
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#sutura"><span class="nav__num">01</span> Sutura</a></li>
-          <li><a class="nav__link" href="#research"><span class="nav__num">02</span> Research</a></li>
-          <li><a class="nav__link" href="#experience"><span class="nav__num">03</span> Work</a></li>
-          <li><a class="nav__link" href="#record"><span class="nav__num">04</span> Record</a></li>
-          <li><a class="nav__link" href="#brain"><span class="nav__num">05</span> Brain</a></li>
-          <li><a class="nav__link" href="#contact"><span class="nav__num">09</span> Contact</a></li>
-          <li>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Switch color theme" title="Switch theme">
-              <span class="theme-toggle__label" data-theme-label>Light</span>
-            </button>
-          </li>
+          <li><a class="nav__link" href="#sutura">Sutura</a></li>
+          <li><a class="nav__link" href="#research">Research</a></li>
+          <li><a class="nav__link" href="#experience">Work</a></li>
+          <li><a class="nav__link" href="#record">Record</a></li>
+          <li><a class="nav__link" href="#brain">Brain</a></li>
         </ul>
+        <a class="nav__cta" href="#contact">Let's talk <span class="nav__cta-dot" aria-hidden="true"></span></a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-
-    <!-- ============ 00 — HERO ============ -->
-    <section class="hero" aria-labelledby="hero-name">
-      <div class="shell">
-        <div class="rail" aria-hidden="true"><span class="rail__num">00</span></div>
-        <div class="hero__content">
-          <p class="hero__badge hero-in">Co-founder, Sutura Genomics · YC Startup School 2026</p>
-          <p class="eyebrow hero-in">Computational cancer biology · Katy, Texas</p>
-          <h1 class="hero__name hero-in" id="hero-name">Sean Lee</h1>
-          <p class="hero__sub hero-in">
-            I build computational models of cancer from patient genomic data and present
-            them as first author. I started independent cancer research at 14, working under
-            an associate professor at MD Anderson — writing the code, building the models,
-            running the analysis.
-          </p>
-
-          <dl class="metarow hero-in">
-            <div class="metarow__cell">
-              <dt>Location</dt>
-              <dd>Katy, Texas</dd>
-            </div>
-            <div class="metarow__cell">
-              <dt>Internship</dt>
-              <dd>MD Anderson</dd>
-            </div>
-            <div class="metarow__cell">
-              <dt>Class</dt>
-              <dd>2028</dd>
-            </div>
-          </dl>
-
-          <div class="statstrip hero-in" role="group" aria-label="Key figures">
-            <div class="statstrip__cell">
-              <span class="statstrip__num">1,274</span>
-              <span class="statstrip__label">Tumors in my largest study</span>
-            </div>
-            <div class="statstrip__cell">
-              <span class="statstrip__num">3</span>
-              <span class="statstrip__label">First-author works</span>
-            </div>
-            <div class="statstrip__cell">
-              <span class="statstrip__num">Since 2024</span>
-              <span class="statstrip__label">In research — since age 14</span>
-            </div>
-          </div>
-
-          <a class="readlink hero-in" href="#sutura">Read the work <span aria-hidden="true">&#8595;</span></a>
-        </div>
+  <!-- ============ HERO (fixed; content rises over it) ============ -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <canvas class="hero__canvas" aria-hidden="true"></canvas>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="hero__row hero__row--top reveal">
+        <p class="hero__eyebrow"><span class="dot" aria-hidden="true"></span> Computational cancer biology — Katy, Texas</p>
+        <a class="hero__email" href="mailto:seangplee@gmail.com">seangplee@gmail.com</a>
       </div>
-    </section>
 
-    <!-- Full-bleed hero band: the strongest frame, with a curtain reveal. -->
-    <figure class="heroband photo reveal curtain" style="--ar: 12 / 5; --ar-mobile: 4 / 3; --pos: center 62%;">
-      <div class="photo__frame">
-        <div class="photo__parallax" data-parallax="0.9">
-          <span class="photo__lqip" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABcQERQRDhcUEhQaGBcbIjklIh8fIkYyNSk5UkhXVVFIUE5bZoNvW2F8Yk5QcptzfIeLkpSSWG2grJ+OqoOPko3/2wBDARgaGiIeIkMlJUONXlBejY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY3/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMFAgT/xAAfEAACAgMAAgMAAAAAAAAAAAABAgARAwQhEjFBUZH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMaLsqD6BE79vO51aJFDtH5kzHa41NnouMzZSdVrUcX3fZisnOQclID4gUL7CTsieTklm/YQKv/Z)"></span>
-          <picture>
-            <source type="image/webp" srcset="images/hero-roses.webp" />
-            <img class="photo__img" src="images/hero-roses.jpg" width="2400" height="1600" alt="Wild roses in soft focus against a hazy, backlit woodland and a quiet stream." loading="eager" fetchpriority="high" decoding="async" onerror="this.closest('.heroband').style.display='none'" />
-          </picture>
-        </div>
+      <h1 class="hero__headline">
+        <span class="reveal">I build computational models of cancer</span>
+        <span class="reveal">from patient genomic data<span class="accent">.</span></span>
+        <span class="hero__headline-dim reveal">First author across 1,274 tumors — and co-founder of a spatial-genomics startup.</span>
+      </h1>
+
+      <div class="hero__row hero__row--bottom reveal">
+        <p class="hero__name">Sean&nbsp;Lee</p>
+        <ul class="hero__facts">
+          <li>Co-founder, Sutura Genomics</li>
+          <li>YC Startup School 2026</li>
+          <li>MD Anderson</li>
+        </ul>
       </div>
-      <figcaption class="shot__cap">Wild roses, morning light — patience as a way of working.</figcaption>
-    </figure>
+    </div>
+    <a class="hero__cue" href="#sutura" aria-label="Scroll down">Scroll <span aria-hidden="true">&#8595;</span></a>
+  </section>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <main id="main" class="content">
 
     <!-- ============ 01 — SUTURA GENOMICS (flagship) ============ -->
     <section class="section" id="sutura" aria-labelledby="sutura-title">
