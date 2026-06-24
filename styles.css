@@ -12,7 +12,7 @@
   --bg-alt: #16160F;
   --fg: #F4F3EC;
   --fg-muted: #9A988C;
-  --accent: #C6502B;
+  --accent: #13C68A;
 
   /* Hairline derived from fg at low alpha so it tracks the theme. */
   --rule: rgba(244, 243, 236, 0.16);
@@ -32,13 +32,13 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Light mode — for printing / sharing on white. Same accent. */
+/* Light mode — for printing / sharing on white. Deeper emerald for contrast on white. */
 :root[data-theme="light"] {
-  --bg: #F4F3EC;
-  --bg-alt: #ECEAE0;
+  --bg: #FFFFFF;
+  --bg-alt: #FAFAF9;
   --fg: #0E0E0C;
   --fg-muted: #6A685E;
-  --accent: #C6502B;
+  --accent: #016B45;
   --rule: rgba(14, 14, 12, 0.18);
   --rule-strong: rgba(14, 14, 12, 0.34);
 }
@@ -46,11 +46,11 @@
 /* Honor OS preference when the user hasn't chosen explicitly. */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
-    --bg: #F4F3EC;
-    --bg-alt: #ECEAE0;
+    --bg: #FFFFFF;
+    --bg-alt: #FAFAF9;
     --fg: #0E0E0C;
     --fg-muted: #6A685E;
-    --accent: #C6502B;
+    --accent: #016B45;
     --rule: rgba(14, 14, 12, 0.18);
     --rule-strong: rgba(14, 14, 12, 0.34);
   }
@@ -116,7 +116,7 @@ strong { font-weight: 600; }
   z-index: 200;
   transform: translateY(-150%);
   background: var(--accent);
-  color: #F4F3EC;
+  color: #0E0E0C;
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.04em;
