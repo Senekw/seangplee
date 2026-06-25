@@ -1538,9 +1538,10 @@ strong { font-weight: 600; }
 .hero__role {
   font-family: var(--font-mono);
   font-size: 12.5px;
+  font-weight: 500;
   line-height: 1.6;
   letter-spacing: 0.02em;
-  color: var(--fg-muted);
+  color: var(--accent);
   margin-bottom: 1.5rem;
   max-width: 30rem;
 }
