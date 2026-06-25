@@ -10,9 +10,12 @@ export default function Record() {
   const meta = sectionById.record;
 
   return (
-    <Section meta={meta} labelledBy="record-claim">
+    <Section meta={meta} labelledBy="record-title">
+      <h2 className="sr-only" id="record-title">
+        The record
+      </h2>
       <Reveal as="p" className="record__claim">
-        <span id="record-claim">
+        <span>
           The youngest presenter — and the{" "}
           <em>only high schooler</em> — in the documented history of the
           Cholangiocarcinoma Foundation Annual Conference.

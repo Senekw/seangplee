@@ -17,7 +17,7 @@ export default function Marquee({ items, label, durationSec = 42 }: MarqueeProps
 
   if (reduced) {
     return (
-      <div className="marquee" aria-label={label}>
+      <div className="marquee" role="group" aria-label={label}>
         <div className="marquee__track" style={{ animation: "none", flexWrap: "wrap" }}>
           <span className="marquee__item">{items.join("  ✳  ")}</span>
         </div>
@@ -29,7 +29,7 @@ export default function Marquee({ items, label, durationSec = 42 }: MarqueeProps
   const doubled = [...items, ...items];
 
   return (
-    <div className="marquee" aria-label={label}>
+    <div className="marquee" role="group" aria-label={label}>
       <div
         className="marquee__track"
         style={{ ["--marquee-dur" as string]: `${durationSec}s` }}
