@@ -12,7 +12,7 @@
   --bg-alt: #16160F;
   --fg: #F4F3EC;
   --fg-muted: #9A988C;
-  --accent: #13C68A;
+  --accent: #C6502B;
 
   /* Hairline derived from fg at low alpha so it tracks the theme. */
   --rule: rgba(244, 243, 236, 0.16);
@@ -32,13 +32,13 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Light mode — for printing / sharing on white. Deeper emerald for contrast on white. */
+/* Light mode, for printing or sharing on white. Burnt orange holds contrast on white. */
 :root[data-theme="light"] {
   --bg: #FFFFFF;
   --bg-alt: #FAFAF9;
   --fg: #0E0E0C;
   --fg-muted: #6A685E;
-  --accent: #016B45;
+  --accent: #C6502B;
   --rule: rgba(14, 14, 12, 0.18);
   --rule-strong: rgba(14, 14, 12, 0.34);
 }
@@ -50,7 +50,7 @@
     --bg-alt: #FAFAF9;
     --fg: #0E0E0C;
     --fg-muted: #6A685E;
-    --accent: #016B45;
+    --accent: #C6502B;
     --rule: rgba(14, 14, 12, 0.18);
     --rule-strong: rgba(14, 14, 12, 0.34);
   }
@@ -343,8 +343,6 @@ strong { font-weight: 600; }
 
 .hero { padding-top: var(--bar-h); }
 
-.hero__content { padding-top: 6.5rem; }
-
 .eyebrow { margin-bottom: 1.5rem; }
 
 .hero__name {
@@ -365,31 +363,39 @@ strong { font-weight: 600; }
   margin-bottom: 2.5rem;
 }
 
-/* Hero portrait: photo sits to the right of the name */
+/* Hero portrait: photo sits right beside the name + intro */
 .hero__inner {
+  padding-top: 6.5rem;
+  padding-bottom: 5.5rem;
+}
+.hero__top {
   display: flex;
-  align-items: flex-start;
-  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
 }
-.hero__content {
-  flex: 1 1 auto;
+.hero__intro {
+  flex: 0 1 auto;
   min-width: 0;
+  /* keep the column tight to the name so the photo hugs it */
+  max-width: 27rem;
 }
+.hero__meta { margin-top: 3.25rem; }
 
 .hero__portrait {
   flex: 0 0 auto;
-  align-self: flex-start;
-  /* line the photo's top up with the name block, not the very top of the hero */
-  margin: 6.5rem 0 0;
-  width: clamp(220px, 27vw, 340px);
+  margin: 0;
+  width: clamp(220px, 24vw, 320px);
+  /* matted frame: outer rule + inset mat + thin edge on the photo */
+  padding: clamp(0.55rem, 0.9vw, 0.85rem);
   background: var(--bg-alt);
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-strong);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
 }
 .hero__portrait img {
   display: block;
   width: 100%;
   height: auto;
+  border: 1px solid var(--rule);
 }
 .hero__portrait.is-missing { display: none; }
 
@@ -922,17 +928,14 @@ strong { font-weight: 600; }
 }
 
 @media (max-width: 640px) {
-  .hero__inner {
+  .hero__top {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
+    gap: 1.75rem;
   }
-  .hero__content { padding-bottom: 2rem; }
-  .hero__portrait {
-    align-self: flex-start;
-    margin: 1.5rem 0 0;
-    width: min(280px, 70%);
-  }
+  .hero__intro { max-width: none; }
+  /* fill the row side-to-side under the text (shell padding leaves the gap) */
+  .hero__portrait { width: 100%; }
 }
 
 @media (max-width: 720px) {
@@ -944,8 +947,11 @@ strong { font-weight: 600; }
   }
   .rail { display: none; }
 
-  .section__content,
-  .hero__content {
+  .section__content {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .hero__inner {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
@@ -1399,21 +1405,7 @@ strong { font-weight: 600; }
 /* ----- 17. Sutura Genomics flagship section ----------------------------- */
 /* ========================================================================= */
 
-/* Filled accent badge — used in the hero for the YC signal */
-.hero__badge {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: var(--accent);
-  color: var(--accent-fg);
-  padding: 0.45rem 0.8rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Bordered accent badge — used inside the Sutura section */
+/* Bordered accent badge, used inside the Sutura section */
 .sutura-badge {
   display: inline-block;
   font-family: var(--font-mono);
@@ -1535,4 +1527,132 @@ strong { font-weight: 600; }
     color: var(--accent);
     margin-right: 0.45rem;
   }
+}
+
+/* =========================================================================
+   16. Restructure additions — hero role line, About Me (full-width),
+   folded Sutura subsection, business-card button.
+   ========================================================================= */
+
+/* Hero role/tagline that replaced the badge + eyebrow */
+.hero__role {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--fg-muted);
+  margin-bottom: 1.5rem;
+  max-width: 30rem;
+}
+.hero__role::before {
+  content: "";
+  display: inline-block;
+  width: 1.4rem;
+  height: 1px;
+  background: var(--accent);
+  vertical-align: middle;
+  margin-right: 0.6rem;
+}
+
+/* ----- About Me: centered head, wide photo band, full-width columns ----- */
+.about__wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem;
+}
+.about__head {
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+.about__head .section__kicker {
+  margin-bottom: 0.9rem;
+}
+.about__title {
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 3.25rem);
+  margin-bottom: 0;
+}
+.about__photo {
+  margin: 0 0 2.75rem;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+}
+.about__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  object-fit: cover;
+  object-position: center 32%;
+  border-bottom: 1px solid var(--rule);
+}
+.about__photo.is-missing { display: none; }
+.about__cap {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  padding: 0.75rem 1rem;
+}
+.about__cols {
+  column-count: 3;
+  column-gap: 2.75rem;
+  margin-bottom: 2.5rem;
+}
+.about__cols p {
+  margin: 0 0 1.1rem;
+  font-size: 1.02rem;
+  line-height: 1.62;
+}
+.about__cols p:first-child { margin-top: 0; }
+.about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .about__cols { column-count: 2; }
+}
+@media (max-width: 640px) {
+  .about__wrap { padding: 4rem 1.25rem; }
+  .about__head { margin-bottom: 2rem; }
+  .about__cols { column-count: 1; }
+  .about__photo img { max-height: 300px; }
+}
+
+/* ----- Folded Sutura subsection at the bottom of Research --------------- */
+.subsection {
+  margin-top: 3.75rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--rule-strong);
+}
+.subsection__kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+/* ----- Business-card button in Contact --------------------------------- */
+.contact__card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg);
+  border: 1px solid var(--rule-strong);
+  padding: 0.75rem 1.15rem;
+  margin-bottom: 2.5rem;
+  transition: border-color 0.18s var(--ease), color 0.18s var(--ease);
+}
+.contact__card:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
