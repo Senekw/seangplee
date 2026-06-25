@@ -1,0 +1,13 @@
+# Netlify build settings — Next.js App Router at the repo root.
+# The official @netlify/plugin-nextjs is auto-installed by Netlify and handles
+# SSR/ISR, the image optimizer, and routing. Base directory is the repo root.
+
+[build]
+  command = "next build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

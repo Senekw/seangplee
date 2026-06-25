@@ -4,11 +4,21 @@
 # Local dev / editor config (not part of the site)
 .claude/
 
-# Node / misc
+# Node / build
 node_modules/
+.next/
+out/
 *.log
+*.tsbuildinfo
+next-env.d.ts
 
-# Original camera-roll photos (optimized + WebP copies live in images/)
+# Netlify
+.netlify/
+
+# Env
+.env*.local
+
+# Original camera-roll photos (optimized + WebP copies live in public/images/)
 /*.JPG
 /*.JPEG
 /*.jpg
