@@ -14,13 +14,20 @@ export default function Cursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
 
+  // 1. Decide eligibility once (fine pointer + motion allowed).
   useEffect(() => {
     if (reduced) return;
     if (!window.matchMedia("(pointer: fine)").matches) return;
     setEnabled(true);
+  }, [reduced]);
 
-    const dot = dotRef.current!;
-    const ring = ringRef.current!;
+  // 2. Wire listeners only after the cursor elements are actually mounted.
+  useEffect(() => {
+    if (!enabled) return;
+    const dot = dotRef.current;
+    const ring = ringRef.current;
+    if (!dot || !ring) return;
+
     let mx = window.innerWidth / 2;
     let my = window.innerHeight / 2;
     let rx = mx;
@@ -54,7 +61,7 @@ export default function Cursor() {
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(frame);
     };
-  }, [reduced]);
+  }, [enabled]);
 
   if (!enabled) return null;
 
