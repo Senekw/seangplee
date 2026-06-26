@@ -1149,6 +1149,19 @@ strong { font-weight: 600; }
   line-height: 1.25;
   letter-spacing: -0.005em;
 }
+.entry__title:has(.entry__logo) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.entry__logo {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
 .entry__period {
   font-family: var(--font-mono);
   font-size: 11px;
