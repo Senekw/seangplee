@@ -14,65 +14,17 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  /* ----- 1. Theme toggle (persisted, respects prefers-color-scheme) ----- */
+  /* ----- 1. Light-only theme -------------------------------------------
+     There is no dark mode and no toggle. Force light and clear any theme a
+     previous version may have persisted, so returning visitors get light too. */
 
-  var STORAGE_KEY = "sl-theme";
   var root = document.documentElement;
-  var themeBtn = document.getElementById("theme-toggle");
-  var themeLabel = document.querySelector("[data-theme-label]");
-
-  function systemPrefersLight() {
-    return window.matchMedia("(prefers-color-scheme: light)").matches;
+  root.removeAttribute("data-theme");
+  try {
+    localStorage.removeItem("sl-theme");
+  } catch (e) {
+    /* localStorage may be unavailable (private mode); fail silent. */
   }
-
-  /* Resolve the effective theme: explicit attr wins, else the pastel light
-     default (dark is opt-in via the toggle). */
-  function currentTheme() {
-    var attr = root.getAttribute("data-theme");
-    if (attr === "light" || attr === "dark") return attr;
-    return "light";
-  }
-
-  /* The toggle offers the *opposite* of what's showing. */
-  function syncThemeLabel() {
-    if (!themeLabel) return;
-    themeLabel.textContent = currentTheme() === "dark" ? "Light" : "Dark";
-  }
-
-  function applyStoredTheme() {
-    var stored = null;
-    try {
-      stored = localStorage.getItem(STORAGE_KEY);
-    } catch (e) {
-      /* localStorage may be unavailable (private mode); fail silent. */
-    }
-    if (stored === "light" || stored === "dark") {
-      root.setAttribute("data-theme", stored);
-    }
-    syncThemeLabel();
-  }
-
-  function toggleTheme() {
-    var next = currentTheme() === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try {
-      localStorage.setItem(STORAGE_KEY, next);
-    } catch (e) {
-      /* ignore */
-    }
-    syncThemeLabel();
-  }
-
-  applyStoredTheme();
-  if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
-
-  /* If the OS theme changes and the user hasn't chosen, keep label honest. */
-  var sysMql = window.matchMedia("(prefers-color-scheme: light)");
-  var onSysChange = function () {
-    if (!root.getAttribute("data-theme")) syncThemeLabel();
-  };
-  if (sysMql.addEventListener) sysMql.addEventListener("change", onSysChange);
-  else if (sysMql.addListener) sysMql.addListener(onSysChange);
 
   /* ----- 2. Mobile nav -------------------------------------------------- */
 

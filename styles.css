@@ -38,19 +38,6 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Optional dark theme, kept for the toggle. Cool slate so the bright pastel
-   accents stay vivid. */
-:root[data-theme="dark"] {
-  --bg: #131619;
-  --bg-alt: #1A1E22;
-  --fg: #EDF7F6;
-  --fg-muted: #A28089;     /* the mauve reads as a soft muted tone on dark */
-  --accent: #51E2F5;
-  --accent-2: #9DF9EF;
-  --rule: rgba(237, 247, 246, 0.16);
-  --rule-strong: rgba(237, 247, 246, 0.32);
-}
-
 /* ----- 1b. Per-section pastel accents -----------------------------------
    The entire sheet draws its color from --accent / --accent-2 (ticks,
    underlines, kicker numbers, chips, links, borders). Re-pointing those two
@@ -69,18 +56,6 @@
 #skills    { --accent: #8A5E6A; --accent-2: #A87C88; } /* mauve */
 #orbit     { --accent: #0E91AB; --accent-2: #16A9C4; } /* cyan  */
 #contact   { --accent: #D85A74; --accent-2: #F07F94; } /* pink  */
-
-/* On the dark theme the bright pastels themselves read well, so swap them in. */
-:root[data-theme="dark"] .hero       { --accent: #51E2F5; --accent-2: #9DF9EF; }
-:root[data-theme="dark"] #about      { --accent: #9DF9EF; --accent-2: #C9FBF4; }
-:root[data-theme="dark"] #research   { --accent: #FFA8B6; --accent-2: #FFC9D2; }
-:root[data-theme="dark"] #experience { --accent: #C9A2AC; --accent-2: #DCC0C7; }
-:root[data-theme="dark"] #record     { --accent: #51E2F5; --accent-2: #9DF9EF; }
-:root[data-theme="dark"] #brain      { --accent: #9DF9EF; --accent-2: #C9FBF4; }
-:root[data-theme="dark"] #community  { --accent: #FFA8B6; --accent-2: #FFC9D2; }
-:root[data-theme="dark"] #skills     { --accent: #C9A2AC; --accent-2: #DCC0C7; }
-:root[data-theme="dark"] #orbit      { --accent: #51E2F5; --accent-2: #9DF9EF; }
-:root[data-theme="dark"] #contact    { --accent: #FFA8B6; --accent-2: #FFC9D2; }
 
 /* ----- 2. Reset ---------------------------------------------------------- */
 
@@ -386,18 +361,6 @@ strong { font-weight: 600; }
   background-repeat: no-repeat;
 }
 
-/* Dark theme keeps the original dark scrim. */
-:root[data-theme="dark"] .hero {
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(19, 22, 25, 0.30) 0%,
-      rgba(19, 22, 25, 0.55) 45%,
-      rgba(19, 22, 25, 0.86) 78%,
-      var(--bg) 100%
-    ),
-    url("images/hero-bg.jpg");
-}
 
 .eyebrow { margin-bottom: 1.5rem; }
 
@@ -1773,10 +1736,6 @@ strong { font-weight: 600; }
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-  }
-  :root[data-theme="dark"] .hero__name,
-  :root[data-theme="dark"] .statstrip__num {
-    background-image: linear-gradient(95deg, #51E2F5, #FFA8B6);
   }
 }
 
