@@ -38,40 +38,34 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="orbit.css" />
+  <link rel="stylesheet" href="staggeredmenu.css" />
+  <link rel="stylesheet" href="masonry.css" />
+
+  <!-- React island (orbiting photos): React + motion + htm via CDN, no build step. -->
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@18.3.1",
+      "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+      "react/jsx-dev-runtime": "https://esm.sh/react@18.3.1/jsx-dev-runtime",
+      "react-dom": "https://esm.sh/react-dom@18.3.1",
+      "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+      "motion/react": "https://esm.sh/motion@11.18.2/react?external=react,react-dom",
+      "htm": "https://esm.sh/htm@3.1.1",
+      "gsap": "https://esm.sh/gsap@3.13.0"
+    }
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============ FIXED TOP BAR ============ -->
-  <header class="topbar" id="top">
-    <div class="topbar__inner">
-      <a class="monogram" href="#top" aria-label="Sean Lee, home">SL</a>
-
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-      </button>
-
-      <nav class="nav" id="primary-nav" aria-label="Primary">
-        <ul class="nav__list">
-          <li><a class="nav__link" href="#about"><span class="nav__num">01</span> About Me</a></li>
-          <li><a class="nav__link" href="#research"><span class="nav__num">02</span> Research</a></li>
-          <li><a class="nav__link" href="#experience"><span class="nav__num">03</span> Work</a></li>
-          <li><a class="nav__link" href="#record"><span class="nav__num">04</span> Record</a></li>
-          <li><a class="nav__link" href="#brain"><span class="nav__num">05</span> Brain</a></li>
-          <li><a class="nav__link" href="#contact"><span class="nav__num">06</span> Contact</a></li>
-          <li>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Switch color theme" title="Switch theme">
-              <span class="theme-toggle__label" data-theme-label>Light</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
   <main id="main">
+
+    <!-- ============ STAGGERED MENU (replaces the old top bar) ============ -->
+    <!-- React island mounts here (see staggeredmenu.js). -->
+    <div id="staggered-menu-root"></div>
 
     <!-- ============ 00, HERO ============ -->
     <section class="hero" aria-labelledby="hero-name">
@@ -981,6 +975,25 @@
       </div>
     </section>
 
+    <!-- ============ 07, BEYOND THE LAB (orbiting photos) ============ -->
+    <section class="section orbit-section" id="orbit" aria-labelledby="orbit-title">
+      <div class="shell">
+        <div class="rail" aria-hidden="true"></div>
+        <div class="section__content">
+          <p class="section__kicker reveal">Beyond the lab</p>
+          <h2 class="section__title reveal" id="orbit-title">Outside the lab</h2>
+          <p class="orbit-lede reveal">
+            Photography, travel, and the occasional cat &mdash; a few frames from life away from the data.
+          </p>
+          <!-- React island mounts here (see orbit.js). Decorative; safe to move or remove. -->
+          <div id="orbit-root" class="reveal"></div>
+
+          <!-- Full photo gallery (Masonry). React island mounts here (see masonry.js). -->
+          <div id="masonry-root" class="masonry-wrap"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ 08, CONTACT ============ -->
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="shell">
@@ -1015,5 +1028,8 @@
   </main>
 
   <script src="script.js"></script>
+  <script type="module" src="orbit.js"></script>
+  <script type="module" src="staggeredmenu.js"></script>
+  <script type="module" src="masonry.js"></script>
 </body>
 </html>

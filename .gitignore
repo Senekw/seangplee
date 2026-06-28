@@ -7,3 +7,13 @@
 # Node / misc
 node_modules/
 *.log
+
+# Source photo uploads kept in the repo root (full-size originals & raw logo
+# uploads). The published site uses the resized copies under images/, so the
+# bulky originals stay out of git.
+/*.jpg
+/*.jpeg
+/*.JPG
+/*.JPEG
+/*.png
+/*.svg

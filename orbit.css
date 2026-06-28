@@ -1,0 +1,106 @@
+/* ============================================================================
+   Orbiting photos — React-island feature (OrbitImages, ported from React Bits)
+   Self-contained: this stylesheet + orbit.js + the #orbit markup in index.html.
+   To remove the feature, delete those three and this file.
+   Original component by Dominik Koch (https://x.com/dominikkoch).
+   ========================================================================== */
+
+/* ----- Section wrapper (matches the site's section/shell rhythm) ----------- */
+.orbit-section {
+  text-align: center;
+}
+.orbit-section .orbit-lede {
+  max-width: 46ch;
+  margin: 0.75rem auto 2.5rem;
+  color: var(--fg-muted);
+  font-family: var(--font-sans);
+}
+
+/* ----- Component (from React Bits, lightly themed) ------------------------ */
+.orbit-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+}
+
+/* Flat, wide rectangle orbit: a horizontal photo band rather than a tall
+   square. Overrides the component's responsive 1:1 aspect-ratio. */
+.orbit-container.orbit--band {
+  max-width: 100%;
+  aspect-ratio: auto !important;
+  height: clamp(160px, 20vw, 240px) !important;
+  overflow: hidden;
+}
+
+.orbit-scaling-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.orbit-scaling-container--responsive {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+}
+
+.orbit-rotation-wrapper {
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  position: relative;
+}
+
+.orbit-path-svg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orbit-item {
+  position: absolute;
+  will-change: transform;
+  user-select: none;
+}
+
+.orbit-center-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* object-fit: cover + rounded frame reads cleaner than the default contain */
+.orbit-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--rule-strong);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+  background: var(--bg-alt);
+}
+
+/* ----- Centered monogram (matches the favicon/SL mark) -------------------- */
+.orbit-monogram {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--accent);
+  background: var(--bg);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+}
+
+/* Respect reduced-motion: orbit.js reads this and renders a paused ring */
+@media (prefers-reduced-motion: reduce) {
+  .orbit-item { will-change: auto; }
+}

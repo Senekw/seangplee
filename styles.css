@@ -341,7 +341,24 @@ strong { font-weight: 600; }
 
 /* ----- 7. Hero ----------------------------------------------------------- */
 
-.hero { padding-top: var(--bar-h); }
+.hero {
+  padding-top: var(--bar-h);
+  position: relative;
+  /* Sunset (IMG_5861) as the hero backdrop, with a dark scrim for legibility
+     that fades into the page background at the bottom. */
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(14, 14, 12, 0.30) 0%,
+      rgba(14, 14, 12, 0.55) 45%,
+      rgba(14, 14, 12, 0.86) 78%,
+      var(--bg) 100%
+    ),
+    url("images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center 28%;
+  background-repeat: no-repeat;
+}
 
 .eyebrow { margin-bottom: 1.5rem; }
 
