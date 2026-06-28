@@ -15,6 +15,14 @@
   color: var(--fg-muted);
   font-family: var(--font-sans);
 }
+.orbit-ig {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+.orbit-ig:hover { text-decoration: underline; }
 
 /* ----- Component (from React Bits, lightly themed) ------------------------ */
 .orbit-container {
