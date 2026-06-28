@@ -361,10 +361,10 @@ if (mount) {
       socialItems=${socialItems}
       displaySocials=${true}
       displayItemNumbering=${true}
-      colors=${['#C6502B', '#16160F']}
-      accentColor="#C6502B"
-      menuButtonColor="#C6502B"
-      openMenuButtonColor="#0E0E0C"
+      colors=${['#FFC53D', '#FF5DA2', '#2DD4BF']}
+      accentColor="#FF5DA2"
+      menuButtonColor="#FFC53D"
+      openMenuButtonColor="#14130E"
       changeMenuColorOnOpen=${true}
       closeOnClickAway=${true}
     />

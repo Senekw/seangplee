@@ -7,12 +7,17 @@
 /* ----- 1. Theme tokens --------------------------------------------------- */
 
 :root {
-  /* Dark is the design default. */
-  --bg: #0E0E0C;
-  --bg-alt: #16160F;
-  --fg: #F4F3EC;
-  --fg-muted: #9A988C;
-  --accent: #C6502B;
+  /* Dark is the design default. Warm near-black (Gates Foundation warmth)
+     so the signature yellow + the section spectrum pop optimistically. */
+  --bg: #14130E;
+  --bg-alt: #1C1A12;
+  --fg: #F5F3ED;          /* Gates "Parchment" */
+  --fg-muted: #9C988A;
+  /* Signature accent is a warm Gates golden-yellow; --accent-2 warms it for
+     gradients. Each section re-points both below so the page walks an
+     optimistic, data-viz-style spectrum instead of a single burnt orange. */
+  --accent: #FFC53D;
+  --accent-2: #FF8A3D;
 
   /* Hairline derived from fg at low alpha so it tracks the theme. */
   --rule: rgba(244, 243, 236, 0.16);
@@ -35,26 +40,68 @@
 /* Light mode, for printing or sharing on white. Burnt orange holds contrast on white. */
 :root[data-theme="light"] {
   --bg: #FFFFFF;
-  --bg-alt: #FAFAF9;
-  --fg: #0E0E0C;
+  --bg-alt: #F5F3ED;       /* Gates "Parchment" */
+  --fg: #1B1B17;
   --fg-muted: #6A685E;
-  --accent: #C6502B;
-  --rule: rgba(14, 14, 12, 0.18);
-  --rule-strong: rgba(14, 14, 12, 0.34);
+  --accent: #B45309;
+  --accent-2: #C2410C;
+  --rule: rgba(27, 27, 23, 0.18);
+  --rule-strong: rgba(27, 27, 23, 0.34);
 }
 
 /* Honor OS preference when the user hasn't chosen explicitly. */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
     --bg: #FFFFFF;
-    --bg-alt: #FAFAF9;
-    --fg: #0E0E0C;
+    --bg-alt: #F5F3ED;     /* Gates "Parchment" */
+    --fg: #1B1B17;
     --fg-muted: #6A685E;
-    --accent: #C6502B;
-    --rule: rgba(14, 14, 12, 0.18);
-    --rule-strong: rgba(14, 14, 12, 0.34);
+    --accent: #B45309;
+    --accent-2: #C2410C;
+    --rule: rgba(27, 27, 23, 0.18);
+    --rule-strong: rgba(27, 27, 23, 0.34);
   }
 }
+
+/* ----- 1b. Per-section vibrant accents ----------------------------------
+   The entire sheet draws its color from --accent / --accent-2 (ticks,
+   underlines, kicker numbers, chips, links, borders). Re-pointing those two
+   tokens on each section walks the page through a full spectrum instead of a
+   single burnt orange — every accent detail recolors automatically.
+   ------------------------------------------------------------------------ */
+
+.hero      { --accent: #FFC53D; --accent-2: #FF8A3D; } /* Gates yellow → orange */
+#about     { --accent: #2DD4BF; --accent-2: #5EEAD4; } /* teal            */
+#research  { --accent: #B383F0; --accent-2: #D2B4FB; } /* violet          */
+#experience{ --accent: #FF7A45; --accent-2: #FFB347; } /* coral           */
+#record    { --accent: #FF5DA2; --accent-2: #FF9CC6; } /* magenta         */
+#brain     { --accent: #41C0F0; --accent-2: #87D9F7; } /* sky             */
+#community { --accent: #3DD68C; --accent-2: #7FE7B6; } /* green           */
+#skills    { --accent: #FFB400; --accent-2: #FFD45E; } /* gold            */
+#orbit     { --accent: #5B8DEF; --accent-2: #93B4F7; } /* blue            */
+#contact   { --accent: #FF5C8A; --accent-2: #FF9BB6; } /* rose            */
+
+/* Deeper variants so accents stay legible on white in light mode. */
+:root[data-theme="light"] .hero,
+:root:not([data-theme]) .hero       { --accent: #E04A1F; --accent-2: #D9730D; }
+:root[data-theme="light"] #about,
+:root:not([data-theme]) #about      { --accent: #0D9488; --accent-2: #0F766E; }
+:root[data-theme="light"] #research,
+:root:not([data-theme]) #research   { --accent: #7C3AED; --accent-2: #6D28D9; }
+:root[data-theme="light"] #experience,
+:root:not([data-theme]) #experience { --accent: #B45309; --accent-2: #92400E; }
+:root[data-theme="light"] #record,
+:root:not([data-theme]) #record     { --accent: #DB2777; --accent-2: #BE185D; }
+:root[data-theme="light"] #brain,
+:root:not([data-theme]) #brain      { --accent: #0284C7; --accent-2: #0369A1; }
+:root[data-theme="light"] #community,
+:root:not([data-theme]) #community  { --accent: #059669; --accent-2: #047857; }
+:root[data-theme="light"] #skills,
+:root:not([data-theme]) #skills     { --accent: #C2410C; --accent-2: #9A3412; }
+:root[data-theme="light"] #orbit,
+:root:not([data-theme]) #orbit      { --accent: #2563EB; --accent-2: #1D4ED8; }
+:root[data-theme="light"] #contact,
+:root:not([data-theme]) #contact    { --accent: #E11D48; --accent-2: #BE123C; }
 
 /* ----- 2. Reset ---------------------------------------------------------- */
 
@@ -1686,4 +1733,59 @@ strong { font-weight: 600; }
 .contact__card:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* =========================================================================
+   18. Vibrant flourishes — Gates Foundation inspired
+   Signature golden-yellow + black, an optimistic full-spectrum strip, and
+   bold gradient headline/figures. The per-section --accent spectrum (§1b)
+   does the rest: every tick, underline, kicker number and chip recolors.
+   ========================================================================= */
+
+/* The optimistic spectrum, reused by the top strip and any color band. */
+:root {
+  --spectrum: linear-gradient(
+    90deg,
+    #FFC53D 0%, #FF7A45 18%, #FF5DA2 36%,
+    #B383F0 54%, #5B8DEF 70%, #2DD4BF 85%, #3DD68C 100%
+  );
+}
+
+/* Thin spectrum band pinned to the very top edge of the page. */
+.topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--spectrum);
+  z-index: 1;
+}
+
+/* Signature mark: black letter on Gates yellow (root --accent). */
+.monogram {
+  background: var(--accent);
+  color: #14130E;
+  border-color: var(--accent);
+}
+.monogram:hover {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--accent);
+}
+
+/* Bold gradient headline + hero figures. background-clip paints the text. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero__name,
+  .statstrip__num {
+    background-image: linear-gradient(95deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@media print {
+  .topbar::before { display: none; }
+  .hero__name, .statstrip__num { color: var(--fg); }
+  .monogram { background: transparent; color: var(--fg); }
 }
