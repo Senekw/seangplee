@@ -25,11 +25,12 @@
     return window.matchMedia("(prefers-color-scheme: light)").matches;
   }
 
-  /* Resolve the effective theme: explicit attr wins, else system. */
+  /* Resolve the effective theme: explicit attr wins, else the pastel light
+     default (dark is opt-in via the toggle). */
   function currentTheme() {
     var attr = root.getAttribute("data-theme");
     if (attr === "light" || attr === "dark") return attr;
-    return systemPrefersLight() ? "light" : "dark";
+    return "light";
   }
 
   /* The toggle offers the *opposite* of what's showing. */

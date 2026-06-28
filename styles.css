@@ -7,21 +7,22 @@
 /* ----- 1. Theme tokens --------------------------------------------------- */
 
 :root {
-  /* Dark is the design default. Warm near-black (Gates Foundation warmth)
-     so the signature yellow + the section spectrum pop optimistically. */
-  --bg: #14130E;
-  --bg-alt: #1C1A12;
-  --fg: #F5F3ED;          /* Gates "Parchment" */
-  --fg-muted: #9C988A;
-  /* Signature accent is a warm Gates golden-yellow; --accent-2 warms it for
-     gradients. Each section re-points both below so the page walks an
-     optimistic, data-viz-style spectrum instead of a single burnt orange. */
-  --accent: #FFC53D;
-  --accent-2: #FF8A3D;
+  /* Soft-pastel LIGHT is the design default now.
+     Palette: #51E2F5 cyan · #9DF9EF mint · #EDF7F6 off-white · #FFA8B6 pink
+     · #A28089 mauve. Backgrounds stay airy; accents carry the color. */
+  --bg: #EDF7F6;           /* off-white with a cyan whisper */
+  --bg-alt: #E1F5F1;       /* soft mint band for alt sections */
+  --fg: #36292F;           /* deep plum ink, harmonizes with the mauve */
+  --fg-muted: #8A6F77;     /* muted mauve, dark enough to read */
+  /* --accent = readable "ink" tone for text/decoration; --accent-2 = a
+     slightly brighter companion for gradients. Each section re-points both
+     below so the page walks the pastel spectrum. */
+  --accent: #0E91AB;       /* deep cyan */
+  --accent-2: #16A9C4;
 
   /* Hairline derived from fg at low alpha so it tracks the theme. */
-  --rule: rgba(244, 243, 236, 0.16);
-  --rule-strong: rgba(244, 243, 236, 0.32);
+  --rule: rgba(54, 41, 47, 0.16);
+  --rule-strong: rgba(54, 41, 47, 0.30);
 
   --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -37,71 +38,49 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Light mode, for printing or sharing on white. Burnt orange holds contrast on white. */
-:root[data-theme="light"] {
-  --bg: #FFFFFF;
-  --bg-alt: #F5F3ED;       /* Gates "Parchment" */
-  --fg: #1B1B17;
-  --fg-muted: #6A685E;
-  --accent: #B45309;
-  --accent-2: #C2410C;
-  --rule: rgba(27, 27, 23, 0.18);
-  --rule-strong: rgba(27, 27, 23, 0.34);
+/* Optional dark theme, kept for the toggle. Cool slate so the bright pastel
+   accents stay vivid. */
+:root[data-theme="dark"] {
+  --bg: #131619;
+  --bg-alt: #1A1E22;
+  --fg: #EDF7F6;
+  --fg-muted: #A28089;     /* the mauve reads as a soft muted tone on dark */
+  --accent: #51E2F5;
+  --accent-2: #9DF9EF;
+  --rule: rgba(237, 247, 246, 0.16);
+  --rule-strong: rgba(237, 247, 246, 0.32);
 }
 
-/* Honor OS preference when the user hasn't chosen explicitly. */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    --bg: #FFFFFF;
-    --bg-alt: #F5F3ED;     /* Gates "Parchment" */
-    --fg: #1B1B17;
-    --fg-muted: #6A685E;
-    --accent: #B45309;
-    --accent-2: #C2410C;
-    --rule: rgba(27, 27, 23, 0.18);
-    --rule-strong: rgba(27, 27, 23, 0.34);
-  }
-}
-
-/* ----- 1b. Per-section vibrant accents ----------------------------------
+/* ----- 1b. Per-section pastel accents -----------------------------------
    The entire sheet draws its color from --accent / --accent-2 (ticks,
    underlines, kicker numbers, chips, links, borders). Re-pointing those two
-   tokens on each section walks the page through a full spectrum instead of a
-   single burnt orange — every accent detail recolors automatically.
+   tokens on each section walks the page through the pastel spectrum —
+   cyan → mint → pink → mauve — every accent detail recolors automatically.
+   Default values are the readable "ink" tones for the light theme.
    ------------------------------------------------------------------------ */
 
-.hero      { --accent: #FFC53D; --accent-2: #FF8A3D; } /* Gates yellow → orange */
-#about     { --accent: #2DD4BF; --accent-2: #5EEAD4; } /* teal            */
-#research  { --accent: #B383F0; --accent-2: #D2B4FB; } /* violet          */
-#experience{ --accent: #FF7A45; --accent-2: #FFB347; } /* coral           */
-#record    { --accent: #FF5DA2; --accent-2: #FF9CC6; } /* magenta         */
-#brain     { --accent: #41C0F0; --accent-2: #87D9F7; } /* sky             */
-#community { --accent: #3DD68C; --accent-2: #7FE7B6; } /* green           */
-#skills    { --accent: #FFB400; --accent-2: #FFD45E; } /* gold            */
-#orbit     { --accent: #5B8DEF; --accent-2: #93B4F7; } /* blue            */
-#contact   { --accent: #FF5C8A; --accent-2: #FF9BB6; } /* rose            */
+.hero      { --accent: #0E91AB; --accent-2: #16A9C4; } /* cyan  */
+#about     { --accent: #11A08C; --accent-2: #19B89A; } /* mint  */
+#research  { --accent: #D85A74; --accent-2: #F07F94; } /* pink  */
+#experience{ --accent: #8A5E6A; --accent-2: #A87C88; } /* mauve */
+#record    { --accent: #0E91AB; --accent-2: #16A9C4; } /* cyan  */
+#brain     { --accent: #11A08C; --accent-2: #19B89A; } /* mint  */
+#community { --accent: #D85A74; --accent-2: #F07F94; } /* pink  */
+#skills    { --accent: #8A5E6A; --accent-2: #A87C88; } /* mauve */
+#orbit     { --accent: #0E91AB; --accent-2: #16A9C4; } /* cyan  */
+#contact   { --accent: #D85A74; --accent-2: #F07F94; } /* pink  */
 
-/* Deeper variants so accents stay legible on white in light mode. */
-:root[data-theme="light"] .hero,
-:root:not([data-theme]) .hero       { --accent: #E04A1F; --accent-2: #D9730D; }
-:root[data-theme="light"] #about,
-:root:not([data-theme]) #about      { --accent: #0D9488; --accent-2: #0F766E; }
-:root[data-theme="light"] #research,
-:root:not([data-theme]) #research   { --accent: #7C3AED; --accent-2: #6D28D9; }
-:root[data-theme="light"] #experience,
-:root:not([data-theme]) #experience { --accent: #B45309; --accent-2: #92400E; }
-:root[data-theme="light"] #record,
-:root:not([data-theme]) #record     { --accent: #DB2777; --accent-2: #BE185D; }
-:root[data-theme="light"] #brain,
-:root:not([data-theme]) #brain      { --accent: #0284C7; --accent-2: #0369A1; }
-:root[data-theme="light"] #community,
-:root:not([data-theme]) #community  { --accent: #059669; --accent-2: #047857; }
-:root[data-theme="light"] #skills,
-:root:not([data-theme]) #skills     { --accent: #C2410C; --accent-2: #9A3412; }
-:root[data-theme="light"] #orbit,
-:root:not([data-theme]) #orbit      { --accent: #2563EB; --accent-2: #1D4ED8; }
-:root[data-theme="light"] #contact,
-:root:not([data-theme]) #contact    { --accent: #E11D48; --accent-2: #BE123C; }
+/* On the dark theme the bright pastels themselves read well, so swap them in. */
+:root[data-theme="dark"] .hero       { --accent: #51E2F5; --accent-2: #9DF9EF; }
+:root[data-theme="dark"] #about      { --accent: #9DF9EF; --accent-2: #C9FBF4; }
+:root[data-theme="dark"] #research   { --accent: #FFA8B6; --accent-2: #FFC9D2; }
+:root[data-theme="dark"] #experience { --accent: #C9A2AC; --accent-2: #DCC0C7; }
+:root[data-theme="dark"] #record     { --accent: #51E2F5; --accent-2: #9DF9EF; }
+:root[data-theme="dark"] #brain      { --accent: #9DF9EF; --accent-2: #C9FBF4; }
+:root[data-theme="dark"] #community  { --accent: #FFA8B6; --accent-2: #FFC9D2; }
+:root[data-theme="dark"] #skills     { --accent: #C9A2AC; --accent-2: #DCC0C7; }
+:root[data-theme="dark"] #orbit      { --accent: #51E2F5; --accent-2: #9DF9EF; }
+:root[data-theme="dark"] #contact    { --accent: #FFA8B6; --accent-2: #FFC9D2; }
 
 /* ----- 2. Reset ---------------------------------------------------------- */
 
@@ -391,20 +370,33 @@ strong { font-weight: 600; }
 .hero {
   padding-top: var(--bar-h);
   position: relative;
-  /* Sunset (IMG_5861) as the hero backdrop, with a dark scrim for legibility
-     that fades into the page background at the bottom. */
+  /* Light theme: a dreamy cyan → mint → off-white pastel wash over the sunset,
+     so the photo survives only as faint texture and dark text reads cleanly. */
   background-image:
     linear-gradient(
       to bottom,
-      rgba(14, 14, 12, 0.30) 0%,
-      rgba(14, 14, 12, 0.55) 45%,
-      rgba(14, 14, 12, 0.86) 78%,
+      rgba(81, 226, 245, 0.82) 0%,
+      rgba(157, 249, 239, 0.70) 42%,
+      rgba(237, 247, 246, 0.90) 80%,
       var(--bg) 100%
     ),
     url("images/hero-bg.jpg");
   background-size: cover;
   background-position: center 28%;
   background-repeat: no-repeat;
+}
+
+/* Dark theme keeps the original dark scrim. */
+:root[data-theme="dark"] .hero {
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(19, 22, 25, 0.30) 0%,
+      rgba(19, 22, 25, 0.55) 45%,
+      rgba(19, 22, 25, 0.86) 78%,
+      var(--bg) 100%
+    ),
+    url("images/hero-bg.jpg");
 }
 
 .eyebrow { margin-bottom: 1.5rem; }
@@ -1736,22 +1728,21 @@ strong { font-weight: 600; }
 }
 
 /* =========================================================================
-   18. Vibrant flourishes — Gates Foundation inspired
-   Signature golden-yellow + black, an optimistic full-spectrum strip, and
-   bold gradient headline/figures. The per-section --accent spectrum (§1b)
-   does the rest: every tick, underline, kicker number and chip recolors.
+   18. Pastel flourishes
+   A soft full-spectrum strip, a bright cyan monogram, and a colorful
+   gradient headline/figures. The per-section --accent spectrum (§1b) does
+   the rest: every tick, underline, kicker number and chip recolors.
    ========================================================================= */
 
-/* The optimistic spectrum, reused by the top strip and any color band. */
+/* The pastel spectrum, reused by the top strip and any color band. */
 :root {
   --spectrum: linear-gradient(
     90deg,
-    #FFC53D 0%, #FF7A45 18%, #FF5DA2 36%,
-    #B383F0 54%, #5B8DEF 70%, #2DD4BF 85%, #3DD68C 100%
+    #51E2F5 0%, #9DF9EF 30%, #EDF7F6 50%, #FFA8B6 72%, #A28089 100%
   );
 }
 
-/* Thin spectrum band pinned to the very top edge of the page. */
+/* Soft spectrum band pinned to the very top edge of the page. */
 .topbar::before {
   content: "";
   position: absolute;
@@ -1761,11 +1752,11 @@ strong { font-weight: 600; }
   z-index: 1;
 }
 
-/* Signature mark: black letter on Gates yellow (root --accent). */
+/* Signature mark: dark letter on bright cyan. */
 .monogram {
-  background: var(--accent);
-  color: #14130E;
-  border-color: var(--accent);
+  background: #51E2F5;
+  color: #16323A;
+  border-color: #51E2F5;
 }
 .monogram:hover {
   background: transparent;
@@ -1773,14 +1764,19 @@ strong { font-weight: 600; }
   border-color: var(--accent);
 }
 
-/* Bold gradient headline + hero figures. background-clip paints the text. */
+/* Colorful gradient headline + hero figures. background-clip paints the text.
+   Cyan → pink so both ends stay readable on the light wash. */
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .hero__name,
   .statstrip__num {
-    background-image: linear-gradient(95deg, var(--accent), var(--accent-2));
+    background-image: linear-gradient(95deg, #0E91AB, #D85A74);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  :root[data-theme="dark"] .hero__name,
+  :root[data-theme="dark"] .statstrip__num {
+    background-image: linear-gradient(95deg, #51E2F5, #FFA8B6);
   }
 }
 
