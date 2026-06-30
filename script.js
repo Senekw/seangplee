@@ -14,9 +14,9 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  /* ----- 1. Light-only theme -------------------------------------------
-     There is no dark mode and no toggle. Force light and clear any theme a
-     previous version may have persisted, so returning visitors get light too. */
+  /* ----- 1. Dark-only theme --------------------------------------------
+     The site is dark-only with no toggle. Clear any theme a previous version
+     may have persisted so returning visitors always get the dark design. */
 
   var root = document.documentElement;
   root.removeAttribute("data-theme");
