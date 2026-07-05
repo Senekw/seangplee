@@ -1126,6 +1126,72 @@ strong { font-weight: 600; }
 .paper__body em { font-style: italic; color: var(--fg); }
 .paper .genepanel { margin: 0 0 1.25rem; }
 
+/* ----- Publications: complete list ------------------------------------- */
+.publist {
+  list-style: none;
+  border-top: 1px solid var(--rule-strong);
+  margin: 2rem 0 0;
+  padding: 0;
+}
+.pub {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pub__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 0.9rem;
+}
+.pub__status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--accent);
+  flex-shrink: 0;
+}
+.pub__status--live { color: var(--fg); }
+.pub__status--live::before { background: var(--accent); }
+.pub__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 0.95rem + 0.9vw, 1.45rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.7rem;
+  text-wrap: balance;
+}
+.pub__venue {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+.pub__authors {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--fg);
+  max-width: 62ch;
+  margin-bottom: 0.7rem;
+}
+.pub__authors strong { color: var(--fg); font-weight: 500; }
+.pub__desc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--fg-muted);
+  max-width: 66ch;
+  margin: 0;
+}
+
 /* Key findings: hairline list with accent tick */
 .keyfindings {
   border-top: 1px solid var(--rule);

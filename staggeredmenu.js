@@ -339,6 +339,7 @@ const StaggeredMenu = ({
 const menuItems = [
   { label: 'About Me',       ariaLabel: 'Go to the about section',         link: '#about' },
   { label: 'Research',       ariaLabel: 'Go to the research section',      link: '#research' },
+  { label: 'Publications',   ariaLabel: 'Go to the publications list',     link: '#publications' },
   { label: 'Work',           ariaLabel: 'Go to the work experience',       link: '#experience' },
   { label: 'Record',         ariaLabel: 'Go to the record section',        link: '#record' },
   { label: 'Brain',          ariaLabel: 'Go to the research brain',        link: '#brain' },
