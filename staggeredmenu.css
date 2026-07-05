@@ -73,7 +73,7 @@
 
 .sm-prelayers {
   position: absolute; top: 0; right: 0; bottom: 0;
-  width: clamp(260px, 38vw, 420px);
+  width: clamp(320px, 44vw, 540px);
   pointer-events: none; z-index: 5; opacity: 0;
 }
 [data-position='left'] .sm-prelayers { right: auto; left: 0; }
@@ -85,7 +85,7 @@
 
 .staggered-menu-panel {
   position: absolute; top: 0; right: 0;
-  width: clamp(260px, 38vw, 420px);
+  width: clamp(320px, 44vw, 540px);
   height: 100%;
   background: #ffffff;
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
@@ -116,7 +116,7 @@
   transition: color 0.25s;
   display: inline-block;
   text-decoration: none;
-  padding-right: 1.4em;
+  padding-right: 1.25em;
 }
 .sm-panel-itemLabel { display: inline-block; will-change: transform; transform-origin: 50% 100%; }
 .sm-panel-item:hover { color: var(--sm-accent, #C6502B); }
@@ -184,7 +184,7 @@
 @media (max-width: 1024px) {
   .staggered-menu-panel { width: 34%; left: auto; right: 0; padding: 5em 1.25rem 1.5rem; }
   .sm-prelayers { width: 34%; left: auto; right: 0; }
-  .sm-panel-item { font-size: 1.7rem; letter-spacing: -1px; }
+  .sm-panel-item { font-size: 1.7rem; letter-spacing: -1px; padding-right: 0.2em; }
   .sm-panel-list[data-numbering] .sm-panel-item::after { display: none; }
 }
 @media (max-width: 560px) {
