@@ -1191,6 +1191,23 @@ strong { font-weight: 600; }
   max-width: 66ch;
   margin: 0;
 }
+.pub__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg);
+  border: 1px solid var(--rule-strong);
+  padding: 0.55rem 0.95rem;
+  transition: border-color 0.18s var(--ease), color 0.18s var(--ease);
+}
+.pub__link:hover { border-color: var(--accent); color: var(--accent); }
+.pub__link-arrow { transition: transform 0.18s var(--ease); }
+.pub__link:hover .pub__link-arrow { transform: translate(2px, -2px); }
 
 /* Key findings: hairline list with accent tick */
 .keyfindings {
