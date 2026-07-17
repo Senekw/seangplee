@@ -71,11 +71,11 @@ strong { font-weight: 600; color: var(--ink); }
 
 /* ----- Header / hero ----------------------------------------------------- */
 
-.hero { padding: 48px 0 8px; }
+.hero { padding: 60px 0 12px; }
 .hero__row {
-  display: flex; gap: 40px; align-items: flex-start;
+  display: flex; gap: 48px; align-items: flex-start;
 }
-.hero__photo { flex: 0 0 400px; max-width: 400px; }
+.hero__photo { flex: 0 0 440px; max-width: 440px; }
 .hero__photo img {
   display: block; width: 100%; height: auto; border: 1px solid var(--rule);
 }
@@ -91,13 +91,13 @@ strong { font-weight: 600; color: var(--ink); }
 
 /* ----- Sections ---------------------------------------------------------- */
 
-hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 52px 0; }
 
-section { padding: 4px 0; }
+section { padding: 8px 0; }
 .section-title { font-size: 32px; font-weight: 500; color: var(--navy); margin-bottom: 18px; }
 
 /* Updates: bold date, then a short line with inline links */
-.updates li { margin-bottom: 12px; }
+.updates li { margin-bottom: 15px; }
 .updates .date { color: var(--ink); font-weight: 600; margin-right: 6px; }
 
 /* Publications / research list */
@@ -125,8 +125,10 @@ a.pub__title { color: var(--navy); }
 /* ----- Responsive -------------------------------------------------------- */
 
 @media (max-width: 720px) {
-  .hero__row { flex-direction: column; gap: 24px; }
-  .hero__photo { flex-basis: auto; max-width: 280px; }
+  .hero__row { flex-direction: column; gap: 28px; align-items: center; }
+  .hero__photo { flex-basis: auto; max-width: 100%; width: 100%; }
+  .hero__photo figcaption { text-align: center; }
+  .hero__intro { width: 100%; }
   .name { font-size: 40px; }
   .section-title { font-size: 28px; }
   .rows li { flex-direction: column; gap: 2px; }
