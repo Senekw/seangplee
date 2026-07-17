@@ -7,21 +7,20 @@
 /* ----- 1. Theme tokens --------------------------------------------------- */
 
 :root {
-  /* Dark is the design default. Warm near-black (Gates Foundation warmth)
-     so the signature yellow + the section spectrum pop optimistically. */
-  --bg: #14130E;
-  --bg-alt: #1C1A12;
-  --fg: #F5F3ED;          /* Gates "Parchment" */
-  --fg-muted: #9C988A;
-  /* Signature accent is a warm Gates golden-yellow; --accent-2 warms it for
-     gradients. Each section re-points both below so the page walks an
-     optimistic, data-viz-style spectrum instead of a single burnt orange. */
-  --accent: #FFC53D;
-  --accent-2: #FF8A3D;
+  /* Light is the design default: a single flat white page, academic-homepage
+     minimal. One restrained navy accent; no section spectrum, no fills. */
+  --bg: #ffffff;
+  --bg-alt: #ffffff;      /* one flat color — no alternating shade */
+  --fg: #1a1a1a;          /* near-black ink */
+  --fg-muted: #6b6b6b;
+  /* Single scholarly navy accent used for links, ticks, kicker numbers,
+     underlines, chips, and borders across the whole sheet. */
+  --accent: #24487a;
+  --accent-2: #3a6bb0;
 
   /* Hairline derived from fg at low alpha so it tracks the theme. */
-  --rule: rgba(244, 243, 236, 0.16);
-  --rule-strong: rgba(244, 243, 236, 0.32);
+  --rule: rgba(26, 26, 26, 0.12);
+  --rule-strong: rgba(26, 26, 26, 0.24);
 
   --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -47,16 +46,10 @@
    single burnt orange — every accent detail recolors automatically.
    ------------------------------------------------------------------------ */
 
-.hero      { --accent: #FFC53D; --accent-2: #FF8A3D; } /* Gates yellow → orange */
-#about     { --accent: #2DD4BF; --accent-2: #5EEAD4; } /* teal            */
-#research  { --accent: #B383F0; --accent-2: #D2B4FB; } /* violet          */
-#experience{ --accent: #FF7A45; --accent-2: #FFB347; } /* coral           */
-#record    { --accent: #FF5DA2; --accent-2: #FF9CC6; } /* magenta         */
-#brain     { --accent: #41C0F0; --accent-2: #87D9F7; } /* sky             */
-#community { --accent: #3DD68C; --accent-2: #7FE7B6; } /* green           */
-#skills    { --accent: #FFB400; --accent-2: #FFD45E; } /* gold            */
-#orbit     { --accent: #5B8DEF; --accent-2: #93B4F7; } /* blue            */
-#contact   { --accent: #FF5C8A; --accent-2: #FF9BB6; } /* rose            */
+/* One flat academic palette — every section shares the same navy accent. */
+.hero, #about, #research, #experience, #record, #brain, #contact {
+  --accent: #24487a; --accent-2: #3a6bb0;
+}
 
 /* ----- 2. Reset ---------------------------------------------------------- */
 
@@ -118,7 +111,7 @@ strong { font-weight: 600; }
   z-index: 200;
   transform: translateY(-150%);
   background: var(--accent);
-  color: #0E0E0C;
+  color: #ffffff;
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.04em;
@@ -346,20 +339,8 @@ strong { font-weight: 600; }
 .hero {
   padding-top: var(--bar-h);
   position: relative;
-  /* Sunset (IMG_5861) as the hero backdrop, with a dark scrim for legibility
-     that fades into the page background at the bottom. */
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(14, 14, 12, 0.30) 0%,
-      rgba(14, 14, 12, 0.55) 45%,
-      rgba(14, 14, 12, 0.86) 78%,
-      var(--bg) 100%
-    ),
-    url("images/hero-bg.jpg");
-  background-size: cover;
-  background-position: center 28%;
-  background-repeat: no-repeat;
+  /* Flat white hero — no backdrop photo. */
+  background: var(--bg);
 }
 
 .eyebrow { margin-bottom: 1.5rem; }

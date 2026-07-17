@@ -11,8 +11,8 @@
   <meta name="description" content="Sean Lee, cancer-genomics researcher and co-founder of Sutura Genomics (accepted to YC Startup School 2026). First-author work across 1,274 tumors and six GI cancers; graph deep learning for spatial-transcriptomics tissue alignment." />
   <meta name="author" content="Sean GP Lee" />
 
-  <!-- Dark-only theme; matches the warm near-black page background. -->
-  <meta name="theme-color" content="#14130E" />
+  <!-- Light theme; flat white page background. -->
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="Co-founder of Sutura Genomics (YC Startup School 2026). First-author computational oncology across 1,274 tumors and six GI cancers." />
 
   <!-- Inline SVG data-URI favicon: boxed SL monogram, sharp corners -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%2314130E'/%3E%3Crect%20x='2.5'%20y='2.5'%20width='27'%20height='27'%20fill='none'%20stroke='%23FFC53D'%20stroke-width='1.5'/%3E%3Ctext%20x='16'%20y='21.5'%20font-family='Georgia,serif'%20font-size='15'%20font-weight='700'%20fill='%23F5F3ED'%20text-anchor='middle'%3ESL%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%23ffffff'/%3E%3Crect%20x='2.5'%20y='2.5'%20width='27'%20height='27'%20fill='none'%20stroke='%2324487a'%20stroke-width='1.5'/%3E%3Ctext%20x='16'%20y='21.5'%20font-family='Georgia,serif'%20font-size='15'%20font-weight='700'%20fill='%2324487a'%20text-anchor='middle'%3ESL%3C/text%3E%3C/svg%3E" />
 
   <!-- Google Fonts: Newsreader (serif display), IBM Plex Mono (labels), Inter (body). -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,11 +37,9 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="orbit.css" />
   <link rel="stylesheet" href="staggeredmenu.css" />
-  <link rel="stylesheet" href="masonry.css" />
 
-  <!-- React island (orbiting photos): React + motion + htm via CDN, no build step. -->
+  <!-- React island (staggered nav menu): React + htm + gsap via CDN, no build step. -->
   <script type="importmap">
   {
     "imports": {
@@ -82,10 +80,6 @@
               and alongside multiple Baylor College of Medicine researchers.
             </p>
           </div>
-
-          <figure class="hero__portrait reveal">
-            <img src="images/portrait.jpg" width="1080" height="1132" alt="Portrait of Sean Lee." onerror="this.closest('.hero__portrait').classList.add('is-missing')" />
-          </figure>
         </div>
 
         <div class="hero__meta reveal">
@@ -132,11 +126,6 @@
           <p class="section__kicker"><span class="section__kicker-num">01</span> About me</p>
           <h2 class="section__title about__title" id="about-title">Who built this?</h2>
         </header>
-
-        <figure class="about__photo reveal">
-          <img src="images/approach-conference.jpg" alt="Sean working on his analysis on a laptop in a conference hall." loading="lazy" onerror="this.closest('.about__photo').classList.add('is-missing')" />
-          <figcaption class="about__cap">Between sessions, running the analysis on-site.</figcaption>
-        </figure>
 
         <div class="about__cols reveal">
           <p>
@@ -247,12 +236,6 @@
                 2026 Annual Conference.
               </p>
               <a class="pub__link" href="https://academic.oup.com/oncolo/article/31/Supplement_1/oyag205.023/8712604?login=false" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
-              <figure class="shot">
-                <a class="poster-link" href="images/ccf-poster.jpg" target="_blank" rel="noopener">
-                  <img src="images/ccf-poster.jpg" alt="First-author research poster: A 6-Gene pSTAT3 Transcriptomic Score Identifies an Immunosuppressive, Chemotherapy-Resistant Phenotype and Predicts Poor Survival in Biliary Tract Cancer, Cholangiocarcinoma Foundation 2026 Annual Conference." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
-                </a>
-                <figcaption class="shot__cap">The presented poster of record, CCF 2026. Open in a new tab for full size.</figcaption>
-              </figure>
             </li>
 
             <li class="pub reveal">
@@ -270,7 +253,7 @@
                 effect away from a moderate or large benefit and shows the CO.23 pSTAT3
                 biomarker signal does not replicate.
               </p>
-              <a class="pub__link" href="https://osf.io/sxgjk/" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
+              <a class="pub__link" href="https://osf.io/rnuc9/files/3dy4v" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
             </li>
 
             <li class="pub reveal">
@@ -287,6 +270,7 @@
                 surrounding tissue, and finds a shared angiogenic–fibrotic, immune-replete
                 microenvironment rather than a mutation-driven program.
               </p>
+              <a class="pub__link" href="https://osf.io/6kyfe/files/nsj6d" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
             </li>
 
             <li class="pub reveal">
@@ -303,7 +287,7 @@
                 slices, with a supervised graph cross-attention model as a proof-of-concept fix.
                 The research foundation behind Sutura Genomics.
               </p>
-              <a class="pub__link" href="https://www.biorxiv.org/content/10.64898/2026.06.30.735390v1" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
+              <a class="pub__link" href="https://osf.io/w35sv/files/a7n2d" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
             </li>
 
             <li class="pub reveal">
@@ -318,6 +302,7 @@
                 can honestly be attributed to a specific tumor compartment — and when the data
                 cannot support that attribution at all.
               </p>
+              <a class="pub__link" href="https://osf.io/nqtz3/files/j7ycv" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
             </li>
 
             <li class="pub reveal">
@@ -333,6 +318,7 @@
                 signal comes from cancer cells or stroma, gated on an explicit identifiability
                 criterion. In colorectal cancer the signal is stroma-borne.
               </p>
+              <a class="pub__link" href="https://osf.io/mw4zj/files/wr8th" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
             </li>
 
             <li class="pub reveal">
@@ -347,6 +333,7 @@
                 attributed to a tumor compartment from bulk RNA, tested across immune-checkpoint
                 cohorts.
               </p>
+              <a class="pub__link" href="https://osf.io/68bwy/files/5kghd" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
             </li>
 
             <li class="pub reveal">
@@ -361,6 +348,7 @@
                 gene signatures do not beat random gene sets, and largely collapse onto a single
                 tumor-inflammation axis.
               </p>
+              <a class="pub__link" href="https://osf.io/epm8y/files/b8ks5" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
             </li>
 
             <li class="pub reveal">
@@ -375,15 +363,9 @@
                 surrogate for the match–mismatch hypothesis, pairing a global recruitment test
                 with a regional prey-timing validation.
               </p>
+              <a class="pub__link" href="https://osf.io/5s924/overview" target="_blank" rel="noopener">Read the publication <span class="pub__link-arrow" aria-hidden="true">&#8599;</span></a>
             </li>
           </ol>
-
-          <p class="methods-foot reveal">
-            Stack: R&nbsp;4.6 / Bioconductor&nbsp;3.23, Python, GSVA, MCP-counter, Spatial
-            EcoTyper, Cox / Kaplan–Meier survival modeling. Discovery on the TCGA PanCancer
-            Atlas; validation on CPTAC proteogenomic cohorts. An organ-conditional direction
-            remains a stated testable prediction, not yet demonstrated.
-          </p>
 
           <ul class="tagrow reveal" aria-label="Focus areas">
             <li class="tag">multi-omics</li>
@@ -404,11 +386,6 @@
             deep learning to solve the one case where every existing method structurally fails:
             tissue tearing.
           </p>
-
-          <figure class="shot reveal">
-            <img src="images/startup-school-ticket.png" alt="Y Combinator Startup School 2026 acceptance ticket for Sean Lee, Chase Center, San Francisco, July 25–26." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
-            <figcaption class="shot__cap">Accepted to Y Combinator Startup School 2026 · Chase Center, SF.</figcaption>
-          </figure>
 
           <div class="prose reveal">
             <p>
@@ -615,17 +592,6 @@
 
           <p class="record__caption reveal">Class of 2028 · Cinco Ranch High School</p>
 
-          <div class="shotrow reveal">
-            <figure class="shot">
-              <img src="images/ccf-ballroom.jpg" alt="The Grand Ballroom entrance at the Cholangiocarcinoma Foundation 2026 Annual Conference." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
-              <figcaption class="shot__cap">CCF 2026 Annual Conference, the Grand Ballroom.</figcaption>
-            </figure>
-            <figure class="shot">
-              <img src="images/ccf-badge.jpg" alt="Sean Lee's Cholangiocarcinoma Foundation 2026 Annual Conference badge, Katy, Texas." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
-              <figcaption class="shot__cap">My conference credential.</figcaption>
-            </figure>
-          </div>
-
           <ol class="entries reveal" aria-label="Roles and recognitions">
             <li class="entry">
               <div class="entry__top">
@@ -637,20 +603,6 @@
                 A 6-gene pSTAT3 transcriptomic score predicting poor survival in biliary tract
                 cancer (n&nbsp;=&nbsp;198). The presented poster of record.
               </p>
-              <button type="button" class="poster-toggle" data-poster-toggle aria-controls="ccf-poster-panel" aria-expanded="false" hidden>
-                <span class="poster-toggle__icon" aria-hidden="true">+</span>
-                <span data-poster-label>View the poster</span>
-              </button>
-              <div class="poster-panel" id="ccf-poster-panel">
-                <div class="poster-panel__inner">
-                  <figure class="shot">
-                    <a class="poster-link" href="images/ccf-poster.jpg" target="_blank" rel="noopener">
-                      <img src="images/ccf-poster.jpg" alt="First-author research poster: A Novel 6-Gene pSTAT3 Transcriptomic Score Identifies an Immunosuppressive, Chemotherapy-Resistant Phenotype and Predicts Poor Survival in Biliary Tract Cancer, Cholangiocarcinoma Foundation 2026 Annual Conference." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
-                    </a>
-                    <figcaption class="shot__cap">The presented poster of record, CCF 2026. Open in a new tab for full size.</figcaption>
-                  </figure>
-                </div>
-              </div>
             </li>
             <li class="entry">
               <div class="entry__top">
@@ -720,11 +672,6 @@
             </div>
           </div>
 
-          <figure class="shot reveal">
-            <img src="images/research-brain.png" alt="Graph view of Sean's research vault, hundreds of interlinked notes on GI oncology, genomics, and drug development." loading="lazy" onerror="this.closest('.shot').classList.add('is-missing')" />
-            <figcaption class="shot__cap">The vault's graph view, every node a note, every line a verified link.</figcaption>
-          </figure>
-
           <blockquote class="thesis reveal">
             Everyone's racing to make AI smarter. In cancer research, smarter was never the
             problem. One fabricated number isn't a typo; it's a retraction. So I built mine to
@@ -781,144 +728,6 @@
       </div>
     </section>
 
-    <!-- ============ 07, BEYOND RESEARCH ============ -->
-    <section class="section" id="community" aria-labelledby="community-title">
-      <div class="shell">
-        <div class="rail" aria-hidden="true"></div>
-        <div class="section__content">
-          <p class="section__kicker reveal">Beyond research</p>
-          <h2 class="section__title reveal" id="community-title">Beyond research</h2>
-
-          <p class="section__lede reveal">
-            Research is most of my time, not all of it. Here is the rest.
-          </p>
-
-          <ol class="entries reveal" aria-label="Community and volunteering">
-            <li class="entry">
-              <div class="entry__top">
-                <h3 class="entry__title"><img class="entry__logo" src="images/logo-texas-childrens.jpg" alt="" loading="lazy" onerror="this.remove()" />Student Volunteer</h3>
-                <span class="entry__period">Jun – Jul 2025</span>
-              </div>
-              <p class="entry__role">Texas Children's Hospital</p>
-              <p class="entry__body">
-                Accepted at 4.3% (13 of 300+ applicants); I assisted nurses and staff, delivered supplies,
-                and transported patients.
-              </p>
-            </li>
-            <li class="entry">
-              <div class="entry__top">
-                <h3 class="entry__title">Musician</h3>
-                <span class="entry__period">May 2025 – present</span>
-              </div>
-              <p class="entry__role">Music for Medicine</p>
-              <p class="entry__body">
-                I perform live music for elderly residents at care homes and assisted-living
-                facilities.
-              </p>
-            </li>
-            <li class="entry">
-              <div class="entry__top">
-                <h3 class="entry__title">Teaching Assistant</h3>
-                <span class="entry__period">Aug 2024 – present</span>
-              </div>
-              <p class="entry__role">KCPCH Korean School</p>
-            </li>
-            <li class="entry">
-              <div class="entry__top">
-                <h3 class="entry__title">Volunteer</h3>
-                <span class="entry__period">Jun – Aug 2025</span>
-              </div>
-              <p class="entry__role">Hope Plus Project / Hope to the Future Association</p>
-              <p class="entry__body">
-                I designed SDG-themed shoes supporting children's health rights in South Sudan,
-                certified by the Undersecretary of the Ministry of Youth and Sports, Republic of
-                South Sudan (ref. HFA-25020043).
-              </p>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 06, SKILLS & METHODS ============ -->
-    <section class="section section--alt" id="skills" aria-labelledby="skills-title">
-      <div class="shell">
-        <div class="rail" aria-hidden="true"></div>
-        <div class="section__content">
-          <p class="section__kicker reveal">Skills &amp; methods</p>
-          <h2 class="section__title reveal" id="skills-title">Skills &amp; Methods</h2>
-
-          <p class="section__lede reveal">
-            The stack I use to take patient genomic data from raw matrix to first-author result.
-          </p>
-
-          <div class="skillgrid reveal">
-            <div class="skillgroup">
-              <p class="skillgroup__label">Languages &amp; tools</p>
-              <ul class="skillgroup__items">
-                <li>Python</li><li>R</li><li>Bioconductor</li><li>NumPy</li>
-                <li>Pandas</li><li>scikit-learn</li><li>SimpleITK</li>
-              </ul>
-            </div>
-            <div class="skillgroup">
-              <p class="skillgroup__label">Genomics &amp; bioinformatics</p>
-              <ul class="skillgroup__items">
-                <li>TCGA data analysis</li><li>RPPA proteomics</li><li>Transcriptomic analysis</li>
-                <li>GSVA</li><li>MCP-counter</li><li>Spatial EcoTyper</li>
-              </ul>
-            </div>
-            <div class="skillgroup">
-              <p class="skillgroup__label">Statistics &amp; survival</p>
-              <ul class="skillgroup__items">
-                <li>Survival modeling</li><li>Kaplan–Meier</li><li>Cox proportional hazards</li>
-                <li>Biostatistics</li><li>Multiple-testing correction</li>
-              </ul>
-            </div>
-            <div class="skillgroup">
-              <p class="skillgroup__label">Imaging &amp; radiomics</p>
-              <ul class="skillgroup__items">
-                <li>PyRadiomics</li><li>GLCM radiomics</li><li>3D Slicer</li>
-              </ul>
-            </div>
-            <div class="skillgroup">
-              <p class="skillgroup__label">Domains</p>
-              <ul class="skillgroup__items">
-                <li>Computational biology</li><li>Cancer genomics</li><li>Tumor immunology</li>
-              </ul>
-            </div>
-            <div class="skillgroup">
-              <p class="skillgroup__label">Communication</p>
-              <ul class="skillgroup__items">
-                <li>Research writing</li><li>Manuscript preparation</li><li>Public speaking</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 07, BEYOND THE LAB (orbiting photos) ============ -->
-    <section class="section orbit-section" id="orbit" aria-labelledby="orbit-title">
-      <div class="shell">
-        <div class="rail" aria-hidden="true"></div>
-        <div class="section__content">
-          <p class="section__kicker reveal">Beyond the lab</p>
-          <h2 class="section__title reveal" id="orbit-title">Outside the lab</h2>
-          <p class="orbit-lede reveal">
-            Photography, travel, and the occasional cat &mdash; a few frames from life away from the data.
-          </p>
-          <p class="orbit-lede reveal">
-            <a class="orbit-ig" href="https://www.instagram.com/sean.photodiary_" target="_blank" rel="noopener">Follow my photography &mdash; @sean.photodiary_ <span aria-hidden="true">&#8599;</span></a>
-          </p>
-          <!-- React island mounts here (see orbit.js). Decorative; safe to move or remove. -->
-          <div id="orbit-root" class="reveal"></div>
-
-          <!-- Full photo gallery (Masonry). React island mounts here (see masonry.js). -->
-          <div id="masonry-root" class="masonry-wrap"></div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ 08, CONTACT ============ -->
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="shell">
@@ -941,6 +750,7 @@
           <ul class="contact__links reveal" aria-label="Elsewhere">
             <li><a href="https://www.linkedin.com/in/sean-lee-ab5645383/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&#8599;</span></a></li>
             <li><a href="https://www.instagram.com/seangplee" target="_blank" rel="noopener">Instagram <span aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.instagram.com/sean.photodiary_" target="_blank" rel="noopener">Photography &middot; @sean.photodiary_ <span aria-hidden="true">&#8599;</span></a></li>
             <li><a href="http://suturagenomics.bio" target="_blank" rel="noopener">Sutura Genomics &middot; startup <span aria-hidden="true">&#8599;</span></a></li>
             <li><a href="http://cancerresearchsociety.science" target="_blank" rel="noopener">Onco Research Scholars &middot; non-profit <span aria-hidden="true">&#8599;</span></a></li>
             <li><a href="https://www.instagram.com/oncoresearchscholars" target="_blank" rel="noopener">Onco Research Scholars &middot; Instagram <span aria-hidden="true">&#8599;</span></a></li>
@@ -958,8 +768,6 @@
   </main>
 
   <script src="script.js"></script>
-  <script type="module" src="orbit.js"></script>
   <script type="module" src="staggeredmenu.js"></script>
-  <script type="module" src="masonry.js"></script>
 </body>
 </html>

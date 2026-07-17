@@ -342,7 +342,6 @@ const menuItems = [
   { label: 'Work',           ariaLabel: 'Go to the work experience',       link: '#experience' },
   { label: 'Record',         ariaLabel: 'Go to the record section',        link: '#record' },
   { label: 'Brain',          ariaLabel: 'Go to the research brain',        link: '#brain' },
-  { label: 'Outside the lab',ariaLabel: 'Go to the orbiting photos',       link: '#orbit' },
   { label: 'Contact',        ariaLabel: 'Go to the contact section',       link: '#contact' }
 ];
 
@@ -361,10 +360,10 @@ if (mount) {
       socialItems=${socialItems}
       displaySocials=${true}
       displayItemNumbering=${true}
-      colors=${['#FFC53D', '#FF5DA2', '#2DD4BF']}
-      accentColor="#FF5DA2"
-      menuButtonColor="#FFC53D"
-      openMenuButtonColor="#14130E"
+      colors=${['#24487a', '#3a6bb0']}
+      accentColor="#24487a"
+      menuButtonColor="#24487a"
+      openMenuButtonColor="#1a1a1a"
       changeMenuColorOnOpen=${true}
       closeOnClickAway=${true}
     />
