@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Sean GP Lee, Curriculum Vitae</title>
+<style>
+  :root {
+    --navy: #022169;
+    --ink: #1a1a1a;
+    --gray: #444;
+    --rule: #c9c9c9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+    color: var(--ink);
+    font-size: 10.3pt;
+    line-height: 1.42;
+  }
+  .page { padding: 0; }
+
+  /* Header */
+  header { margin-bottom: 14px; }
+  .name {
+    font-size: 25pt;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .headline {
+    font-size: 11pt;
+    color: var(--gray);
+    margin-top: 3px;
+    font-weight: 400;
+  }
+  .contact {
+    margin-top: 7px;
+    font-size: 9.4pt;
+    color: var(--gray);
+  }
+  .contact a { color: var(--navy); text-decoration: none; }
+  .contact .sep { color: var(--rule); padding: 0 6px; }
+
+  /* Sections */
+  section { margin-top: 15px; break-inside: auto; }
+  h2 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--navy);
+    border-bottom: 1.5px solid var(--navy);
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+
+  .summary { color: var(--gray); text-align: justify; }
+
+  /* Entry rows */
+  .entry { margin-bottom: 10px; break-inside: avoid; }
+  .entry__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .entry__title { font-weight: 700; color: var(--ink); }
+  .entry__org { font-weight: 600; color: var(--navy); }
+  .entry__meta { color: var(--gray); font-size: 9.6pt; }
+  .entry__date {
+    flex: 0 0 auto;
+    color: var(--gray);
+    font-size: 9.4pt;
+    white-space: nowrap;
+    text-align: right;
+  }
+  .entry__sub {
+    color: var(--gray);
+    font-size: 9.5pt;
+    margin-top: 1px;
+  }
+  ul.bul { list-style: none; margin-top: 4px; }
+  ul.bul li {
+    position: relative;
+    padding-left: 13px;
+    margin-bottom: 2.5px;
+    color: var(--gray);
+  }
+  ul.bul li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: 0.52em;
+    width: 3px; height: 3px;
+    background: var(--navy);
+    border-radius: 50%;
+  }
+
+  /* Publications */
+  .pub { margin-bottom: 8.5px; break-inside: avoid; }
+  .pub__title { font-weight: 600; color: var(--ink); line-height: 1.32; }
+  .pub__meta { color: var(--gray); font-size: 9.5pt; margin-top: 1px; }
+  .pub__meta .venue { font-weight: 600; color: var(--navy); }
+  .pub__note { color: var(--gray); font-size: 9.5pt; margin-top: 1px; font-style: italic; }
+
+  .skills p { color: var(--gray); margin-bottom: 4px; }
+  .skills .lbl { font-weight: 700; color: var(--ink); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 28px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="name">Sean GP Lee</div>
+    <div class="headline">Computational &amp; Translational Cancer Research</div>
+    <div class="contact">
+      Katy, Texas
+      <span class="sep">|</span> <a href="mailto:seangplee@gmail.com">seangplee@gmail.com</a>
+      <span class="sep">|</span> <a href="https://suturagenomics.bio">suturagenomics.bio</a>
+      <span class="sep">|</span> <a href="https://www.linkedin.com/in/sean-lee-ab5645383/">linkedin.com/in/sean-lee-ab5645383</a>
+      <span class="sep">|</span> <a href="https://github.com/Senekw">github.com/Senekw</a>
+      <span class="sep">|</span> <a href="https://scholar.google.com/citations?user=6SDnfO4AAAAJ&hl=en">Google Scholar</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p class="summary">
+      Rising junior at Cinco Ranch High School focused on translational oncology and computational
+      biology. First author on peer-reviewed cancer research, collaborating with an associate professor
+      at MD Anderson Cancer Center and researchers at Baylor College of Medicine. Research spans biliary
+      tract cancer, hepatocellular carcinoma, NSCLC radiomics, multi-omic tumor-microenvironment
+      analysis, and survival modeling. Current work maps how pSTAT3, an inflammatory-cytokine-driven
+      signaling pathway, reshapes the tumor microenvironment across esophageal, gastric, colorectal,
+      pancreatic, liver, and cholangiocarcinoma cancers, integrating genomic, transcriptomic, and spatial
+      data to test whether the axis governs immune landscape, fibrotic architecture, and patient survival.
+    </p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">Cinco Ranch High School <span class="entry__meta">&middot; Katy, Texas</span></span>
+        <span class="entry__date">2024 &ndash; 2028</span>
+      </div>
+      <div class="entry__sub">High School Diploma, Class of 2028 (rising junior).</div>
+      <ul class="bul">
+        <li>Activities: Cancer Research Society president; Physics Club officer; Varsity Orchestra; National Honor Society.</li>
+        <li>Science Olympiad invitational gold medal.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Research &amp; Professional Experience</h2>
+
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">Sutura Genomics, Inc.</span> &middot; Co-Founder &amp; CTO</span>
+        <span class="entry__date">Apr 2026 &ndash; Present</span>
+      </div>
+      <div class="entry__sub">Houston metro area, Texas</div>
+      <ul class="bul">
+        <li>Co-founded an AI platform that reconstructs torn, folded, deformed, or partially missing tissue sections for spatial-biology workflows. Accepted to Y Combinator Startup School 2026.</li>
+        <li>Built the cross-donor evaluation pipeline and ground-truth methodology, drawing on 2.5 years of computational oncology research at MD Anderson.</li>
+        <li>Developed a hybrid alignment system that automatically selects the best method for each dataset and outperforms individual approaches in internal benchmarks, reducing pixel-level alignment error by roughly an order of magnitude across synthetic and real tear scenarios.</li>
+        <li>Positioned Sutura as the vendor and tissue-agnostic reconstruction layer between spatial-imaging hardware and downstream analysis, replacing manual correction or costly sample repetition where methods such as PASTE2, STalign, and GPSA fail.</li>
+        <li>Deployed to four active research labs; built a 35-researcher waitlist from more than 60 pre-build interviews across academia, biotechnology, and pharmaceuticals.</li>
+        <li>Shipped a live web product and interactive demo (suturagenomics.bio), a bioRxiv methodology preprint, four lab deployments, and the first paying customers.</li>
+        <li>Guided by scientific advisor Dr. Sunyoung S. Lee, MD Anderson GI Medical Oncology faculty.</li>
+        <li>Technical stack: Python, PyTorch, PyTorch Geometric, Scanpy, AnnData, scikit-learn, SciPy, Next.js, TypeScript, and Three.js.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">UT MD Anderson Cancer Center</span> &middot; Research Intern</span>
+        <span class="entry__date">Jan 2024 &ndash; Present</span>
+      </div>
+      <div class="entry__sub">Remote</div>
+      <ul class="bul">
+        <li>Conduct computational cancer-genomics research under a GI medical oncologist and associate professor at MD Anderson.</li>
+        <li>Write code, build models, and analyze patient genomic data, including pSTAT3 signaling and the tumor microenvironment across six gastrointestinal cancer cohorts, with discovery and validation on public cohorts including TCGA and CPTAC.</li>
+        <li>Work with an open MD Anderson clinical and molecular dataset that is not publicly available.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">UT MD Anderson Cancer Center</span> &middot; Clinical Research Apprentice</span>
+        <span class="entry__date">Sep 2024 &ndash; Oct 2024</span>
+      </div>
+      <ul class="bul">
+        <li>Completed a one-on-one apprenticeship shadowing a GI medical oncologist and observing the translational side of the computational work.</li>
+        <li>Traveled with the faculty mentor to the DAVANCO conference in Bermuda, an invitation-only meeting.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">Onco Research Scholars</span> &middot; Founder &amp; President</span>
+        <span class="entry__date">Jan 2026 &ndash; Present</span>
+      </div>
+      <ul class="bul">
+        <li>Founded and lead a student research-mentorship organization and international research incubator, coordinating student oncology cohorts across three continents and ten states.</li>
+        <li>Mentor students through the full research process, from developing ideas to cold-emailing faculty. More than 25 members have secured research positions at Stanford, Yale, MIT, MD Anderson, Google, and UT.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">ThroughWay</span> &middot; Co-Founder &amp; CFO</span>
+        <span class="entry__date">Apr 2026 &ndash; Present</span>
+      </div>
+      <div class="entry__sub">Katy, Texas (Hybrid)</div>
+      <ul class="bul">
+        <li>Co-founded a nonprofit reducing financial toxicity and improving insurance access for cancer patients, mentored by the MD Anderson Financial Clearance Center.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">Cholangiocarcinoma Foundation</span> &middot; Researcher</span>
+        <span class="entry__date">Jan 2026 &ndash; Present</span>
+      </div>
+      <div class="entry__sub">Remote, seasonal. Statistical and survival modeling.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">European Society for Medical Oncology (ESMO)</span> &middot; Researcher</span>
+        <span class="entry__date">Apr 2026 &ndash; Present</span>
+      </div>
+      <div class="entry__sub">Remote, seasonal.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Publications &amp; Research Output</h2>
+
+    <div class="pub">
+      <div class="pub__title">Tumor Phospho-STAT3 Marks a Shared Angiogenic-Fibrotic, Immune-Replete Microenvironment Across Gastrointestinal Cancers: A Multi-Omic Analysis of 1,274 Tumors</div>
+      <div class="pub__meta"><span class="venue">First-author manuscript</span> &middot; under review at <i>Molecular Oncology</i> &middot; 2026</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub__title">A 6-Gene pSTAT3 Transcriptomic Score Identifies an Immunosuppressive, Chemotherapy-Resistant Phenotype and Predicts Poor Survival in Biliary Tract Cancer</div>
+      <div class="pub__meta"><span class="venue">The Oncologist</span>, Oxford University Press &middot; June 2026</div>
+      <div class="pub__note">First author (Sean GP Lee et al.).</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub__title">Napabucasin Across Four Registrational Phase 3 Trials in Advanced Gastrointestinal Cancers: A Complete-Enumeration Meta-Analysis Bounding the Survival Effect, and a Tested Non-Replication of the pSTAT3 Biomarker Signal</div>
+      <div class="pub__meta"><span class="venue">OSF Registries</span> &middot; preregistered, under review at <i>Clinical Colorectal Cancer</i> &middot; July 2026</div>
+      <div class="pub__note">Solo-authored systematic review and meta-analysis of the complete registrational Phase 3 program (4 trials; 3,383 patients).</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub__title">Tissue Tearing Degrades Optimal-Transport Registration of Spatial Transcriptomics Beyond Displacement Magnitude: A Multiseed Deformation Benchmark and a Supervised Graph Cross-Attention Proof-of-Concept</div>
+      <div class="pub__meta"><span class="venue">bioRxiv</span> &middot; preprint &middot; July 2026</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub__title">A Pan-Cancer Identifiability Atlas for Compartment-Resolved Pathway Attribution from Bulk Transcriptomes</div>
+      <div class="pub__meta"><span class="venue">Open Science Framework (OSF)</span> &middot; 2026</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub__title">When Can a Pathway Program Be Attributed to a Tumour Compartment from Bulk RNA? An Identifiability Audit Across Immune-Checkpoint Cohorts</div>
+      <div class="pub__meta"><span class="venue">Open Science Framework (OSF)</span> &middot; 2026</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub__title">Competing Risks Are Ignored in Most SEER Cancer-Specific-Mortality Nomograms: A Systematic Audit with Real-Patient Reanalysis and a Validated Correction Pipeline</div>
+      <div class="pub__meta"><span class="venue">Open Science Framework (OSF)</span> &middot; 2026</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub__title">Most Published Immunotherapy-Response Gene Signatures Do Not Outperform Random Gene Sets, and Collapse onto a Single Tumor-Inflammation Axis</div>
+      <div class="pub__meta"><span class="venue">Open Science Framework (OSF)</span> &middot; 2026</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Honors, Presentations &amp; Conferences</h2>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">Youngest presenter, and only high schooler, in the documented history of the Cholangiocarcinoma Foundation Annual Conference</span>
+        <span class="entry__date">2026</span>
+      </div>
+      <div class="entry__sub">First-author poster, MD Anderson travel grant. Presented pSTAT3 transcriptomic-scoring research to an international panel of gastrointestinal oncology experts.</div>
+    </div>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">Poster Presenter, ESMO Asia Congress, Singapore</span>
+        <span class="entry__date">Dec 2026 (upcoming)</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">Returning Presenter, Cholangiocarcinoma Foundation Annual Conference, Utah</span>
+        <span class="entry__date">Mar 2027 (upcoming)</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">Accepted to Y Combinator Startup School 2026 (out of 30,000 applicants)</span>
+        <span class="entry__date">Jul 2026</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">Attendee, DAVANCO Conference, Bermuda</span>
+        <span class="entry__date">2025</span>
+      </div>
+      <div class="entry__sub">Invitation-only international oncology symposium.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Projects &amp; Ventures</h2>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">eBay Reselling Business <span class="entry__meta">&middot; Independent</span></span>
+      </div>
+      <div class="entry__sub">Scaled an independent reselling business to more than $35,000 in net profit.</div>
+    </div>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">Photography <span class="entry__meta">&middot; Independent business</span></span>
+      </div>
+      <div class="entry__sub">Served more than 25 clients across proms, graduations, professional headshots, portraits, and landscapes. Portfolio: @sean.photodiary_.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Volunteer &amp; Community Leadership</h2>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">Texas Children's Hospital</span> &middot; Summer Volunteer</span>
+        <span class="entry__date">Jun 2025 &ndash; Jul 2025</span>
+      </div>
+      <div class="entry__sub">Selected through a competitive process (13 of more than 300 applicants) and served as a lead speaker. Completed 120 volunteer hours assisting nurses and staff.</div>
+    </div>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">Cholangiocarcinoma Foundation</span> &middot; Volunteer</span>
+        <span class="entry__date">May 2026 &ndash; Jun 2026</span>
+      </div>
+      <div class="entry__sub">Set up conference sessions and special events and assembled 500 care kits distributed worldwide.</div>
+    </div>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">KCPCH Korean School</span> &middot; Teaching Assistant</span>
+        <span class="entry__date">Aug 2024 &ndash; Present</span>
+      </div>
+      <div class="entry__sub">Completed 150 volunteer hours, contributing about four hours per week.</div>
+    </div>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">Music for Medicine</span> &middot; Musician</span>
+        <span class="entry__date">May 2025 &ndash; Present</span>
+      </div>
+      <div class="entry__sub">Performs live music for elderly residents at care homes and assisted-living facilities.</div>
+    </div>
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title"><span class="entry__org">Hope Plus Project / Hope to the Future Association</span> &middot; Volunteer</span>
+        <span class="entry__date">Jun 2025 &ndash; Aug 2025</span>
+      </div>
+      <div class="entry__sub">Designed SDG-themed shoes supporting children's health rights in South Sudan.</div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <p><span class="lbl">Research:</span> Computational cancer genomics, translational oncology, multi-omic analysis, spatial transcriptomics, transcriptomics, genomics, tumor-microenvironment analysis, survival and statistical modeling, systematic review and meta-analysis, clinical and molecular data analysis, radiomics, TCGA data analysis, scientific writing and presentation, research mentorship.</p>
+    <p><span class="lbl">Technical:</span> Python, PyTorch, PyTorch Geometric, Scanpy, AnnData, scikit-learn, SciPy, Next.js, TypeScript, Three.js, Git and GitHub, Adobe Lightroom.</p>
+  </section>
+
+</div>
+</body>
+</html>
