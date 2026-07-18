@@ -83,9 +83,10 @@ strong { font-weight: 600; color: var(--ink); }
 .hero__intro { flex: 1 1 auto; min-width: 0; }
 
 .name { font-size: 48px; font-weight: 400; line-height: 1.1; color: var(--navy); margin-bottom: 8px; }
-.email { font-size: 16px; color: var(--navy); margin-bottom: 18px; }
+.tagline { font-size: 18px; font-style: italic; color: var(--gray); margin-bottom: 16px; }
 .hero__intro p { margin-bottom: 18px; }
 .links { font-size: 16px; }
+.links--top { margin-bottom: 26px; }
 .links a { white-space: nowrap; }
 .links .sep { color: var(--gray); padding: 0 6px; }
 
