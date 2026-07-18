@@ -118,20 +118,6 @@ a.pub__title { color: var(--navy); }
 .rows .r-sub { font-size: 15px; color: var(--gray); }
 .rows .r-date { flex: 0 0 auto; font-size: 14px; color: var(--gray); white-space: nowrap; }
 
-/* ----- CV (embedded PDF) ------------------------------------------------- */
-
-.cv__actions { font-size: 15px; margin-bottom: 14px; }
-.cv__actions .sep { color: var(--gray); padding: 0 8px; }
-.cv__frame {
-  border: 1px solid var(--rule);
-  background: #f7f7f5;
-  height: 85vh;
-  max-height: 1100px;
-  min-height: 480px;
-}
-.cv__doc { display: block; width: 100%; height: 100%; border: 0; }
-.cv__fallback { padding: 24px; font-size: 15px; color: var(--gray); }
-
 /* ----- Footer ------------------------------------------------------------ */
 
 .foot { margin: 48px 0 64px; font-size: 14px; color: var(--gray); }
@@ -146,5 +132,4 @@ a.pub__title { color: var(--navy); }
   .name { font-size: 40px; }
   .section-title { font-size: 28px; }
   .rows li { flex-direction: column; gap: 2px; }
-  .cv__frame { height: 70vh; min-height: 380px; }
 }
