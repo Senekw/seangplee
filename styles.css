@@ -78,7 +78,7 @@ strong { font-weight: 600; color: var(--ink); }
 .hero__photo { flex: 0 0 440px; max-width: 440px; }
 .hero__photo img {
   display: block; width: 100%; height: auto; border: 1px solid var(--rule);
-  border-radius: 12px;
+  border-radius: 50%;
 }
 .hero__photo figcaption { margin-top: 8px; font-size: 13px; color: var(--gray); }
 .hero__intro { flex: 1 1 auto; min-width: 0; }
