@@ -78,6 +78,7 @@ strong { font-weight: 600; color: var(--ink); }
 .hero__photo { flex: 0 0 440px; max-width: 440px; }
 .hero__photo img {
   display: block; width: 100%; height: auto; border: 1px solid var(--rule);
+  border-radius: 12px;
 }
 .hero__photo figcaption { margin-top: 8px; font-size: 13px; color: var(--gray); }
 .hero__intro { flex: 1 1 auto; min-width: 0; }
@@ -102,7 +103,7 @@ section { padding: 8px 0; }
 
 /* Publications / research list: square figure thumbnail + body */
 .pubs li { margin-bottom: 26px; display: flex; gap: 18px; align-items: flex-start; }
-.pub__thumb { flex: 0 0 128px; width: 128px; height: 128px; object-fit: cover; border: 1px solid var(--rule); border-radius: 5px; background: #fff; }
+.pub__thumb { flex: 0 0 128px; width: 128px; height: 128px; object-fit: cover; border: 1px solid var(--rule); border-radius: 8px; background: #fff; }
 /* Keeps the thumbnail column's width so titles stay aligned, but claims no height. */
 .pub__thumb--empty { border: 0; background: none; height: 0; }
 .pub__body { min-width: 0; }
