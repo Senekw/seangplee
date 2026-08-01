@@ -10,6 +10,7 @@
   --salmon: #f9564f;   /* links */
   --ink:    #1a1a1a;   /* author names, emphasis */
   --rule:   #e6e6e6;   /* hairline dividers */
+  --frame:  #c4c4c4;   /* photo borders — darker than --rule so the edge reads */
   --bg:     #ffffff;
 
   --font: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -77,8 +78,8 @@ strong { font-weight: 600; color: var(--ink); }
 }
 .hero__photo { flex: 0 0 440px; max-width: 440px; }
 .hero__photo img {
-  display: block; width: 100%; height: auto; border: 1px solid var(--rule);
-  border-radius: 50%;
+  display: block; width: 100%; height: auto; border: 1px solid var(--frame);
+  border-radius: 10px;
 }
 .hero__photo figcaption { margin-top: 8px; font-size: 13px; color: var(--gray); }
 .hero__intro { flex: 1 1 auto; min-width: 0; }
