@@ -5,7 +5,7 @@
    ========================================================================= */
 
 :root {
-  --navy:   #022169;   /* name + section headings */
+  --navy:   #f9564f;   /* name + section headings (matches links) */
   --gray:   #5a5a5a;   /* body text, nav */
   --salmon: #f9564f;   /* links */
   --ink:    #1a1a1a;   /* author names, emphasis */
