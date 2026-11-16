@@ -206,3 +206,15 @@ a.pub__title { color: var(--navy); }
 .gallery img[hidden] { display: none; }
 .see-more { display: block; margin: 16px auto 0; padding: 10px 26px; font: inherit; font-size: 15px; color: var(--salmon); background: #fff; border: 1px solid var(--salmon); border-radius: 8px; cursor: pointer; }
 .see-more:hover { background: var(--salmon); color: #fff; }
+
+/* Photography: classic print frame (cream mat, ink edge, fine inner rule) */
+.gallery { column-gap: 18px; }
+.gallery img {
+  box-sizing: border-box; margin-bottom: 18px; padding: 14px;
+  background: #faf6ec; border: 1px solid #1a1a1a; border-radius: 0;
+  outline: 1px solid #b9ae97; outline-offset: -8px;
+}
+@media (max-width: 720px) {
+  .gallery { column-gap: 10px; }
+  .gallery img { margin-bottom: 10px; padding: 8px; border-radius: 0; outline-offset: -5px; }
+}
