@@ -149,10 +149,12 @@ a.pub__title { color: var(--navy); }
 
 /* Experience rows with org logos (like LinkedIn) */
 .rows--logos li { display: grid; grid-template-columns: 48px 1fr auto; column-gap: 16px; align-items: start; margin-bottom: 22px; }
-.r-logo { width: 48px; height: 48px; object-fit: contain; border: 1px solid var(--rule); border-radius: 8px; background: #fff; }
+.r-logo { display: block; width: 48px; height: 48px; padding: 6px; object-fit: contain; border: 1px solid var(--rule); border-radius: 10px; background: #fff; }
+.r-logo--full { padding: 0; object-fit: cover; border-color: transparent; }
 @media (max-width: 720px) {
   .rows--logos li { grid-template-columns: 40px 1fr; column-gap: 12px; row-gap: 2px; }
   .rows--logos .r-date { grid-column: 2; }
-  .r-logo { width: 40px; height: 40px; }
+  .r-logo { width: 40px; height: 40px; padding: 5px; }
+  .r-logo--full { padding: 0; }
 }
-.r-logo--empty { display: block; background: none; border: 0; }
+.r-logo--empty { display: block; background: none; border: 0; padding: 0; }
