@@ -158,3 +158,5 @@ a.pub__title { color: var(--navy); }
   .r-logo--full { padding: 0; }
 }
 .r-logo--empty { display: block; background: none; border: 0; padding: 0; }
+.r-point { position: relative; padding-left: 14px; font-size: 15px; color: var(--gray); }
+.r-point::before { content: "\2022"; position: absolute; left: 2px; }
