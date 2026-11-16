@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="styles.css?v=19" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -77,7 +77,21 @@
         <img src="images/photos/6563.jpg?v=2" width="1400" height="933" loading="lazy" alt="Brick university building." />
         <img src="images/photos/4410.jpg?v=2" width="1400" height="1050" loading="lazy" alt="Lakeside lawn under autumn leaves." />
         <img src="images/photos/8891.jpg?v=2" width="1050" height="1400" loading="lazy" alt="Moon over dark water." />
+        <img src="images/photos/4407.jpg?v=2" width="933" height="1400" loading="lazy" alt="Sun through trees at dusk." />
+        <img src="images/photos/5802.jpg?v=2" width="1400" height="933" loading="lazy" alt="Hazy canyon layers." />
+        <img src="images/photos/6319.jpg?v=2" width="1400" height="788" loading="lazy" alt="Mountain road through a rainy window." />
+        <img src="images/photos/5539.jpg?v=2" width="933" height="1400" loading="lazy" alt="Cat behind green leaves." />
+        <img src="images/photos/4727.jpg?v=2" width="933" height="1400" loading="lazy" alt="Red flowers in afternoon light." />
+        <img src="images/photos/8893.jpg?v=2" width="1050" height="1400" loading="lazy" alt="Moonlight on dark water." />
       </div>
+      <button class="see-more" id="see-more" type="button" hidden>See more</button>
+      <script>
+        (function () {
+          var g = document.querySelector('.gallery'), b = document.getElementById('see-more');
+          g.classList.add('gallery--short'); b.hidden = false;
+          b.addEventListener('click', function () { g.classList.remove('gallery--short'); b.hidden = true; });
+        })();
+      </script>
     </section>
 
     <hr />
