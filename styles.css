@@ -160,3 +160,41 @@ a.pub__title { color: var(--navy); }
 .r-logo--empty { display: block; background: none; border: 0; padding: 0; }
 .r-point { position: relative; padding-left: 14px; font-size: 15px; color: var(--gray); }
 .r-point::before { content: "\2022"; position: absolute; left: 2px; }
+
+/* ----- Phone layout ------------------------------------------------------- */
+@media (max-width: 720px) {
+  .wrap { padding: 0 20px; }
+
+  /* Nav: tidy 2 x 2 grid instead of an uneven wrap */
+  .nav__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 4px 20px; }
+  .nav a { padding: 9px 0; font-size: 15px; }
+  .nav a:nth-child(even) { text-align: right; }
+
+  /* Home: smaller photo so the name and bio show on the first screen */
+  .hero { padding: 28px 0 4px; }
+  .hero__row { gap: 20px; align-items: flex-start; }
+  .hero__photo { width: 150px; max-width: 150px; }
+  .hero__photo img { border-radius: 10px; }
+  .hero__photo figcaption { display: none; }
+  .name { font-size: 34px; margin-bottom: 4px; }
+  .tagline { font-size: 16px; margin-bottom: 12px; }
+  .links { line-height: 1.9; }
+  .links .sep { padding: 0 4px; }
+
+  hr { margin: 32px 0; }
+  .wrap > section:first-child { padding-top: 28px; }
+  .section-title { font-size: 26px; margin-bottom: 14px; }
+
+  /* Updates: date on its own line so text doesn't wrap raggedly */
+  .updates li { margin-bottom: 12px; }
+  .updates .date { display: block; font-size: 13px; margin: 0; }
+
+  /* Research and Projects: stack image above text, full-width text */
+  .pubs li { flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .pub__thumb { flex: 0 0 auto; width: 96px; height: 96px; }
+  .pub__title { font-size: 16px; }
+
+  .rows--logos li { margin-bottom: 18px; }
+  .rows--logos .r-date { font-size: 13px; }
+  .foot { margin: 32px 0 40px; line-height: 1.9; }
+}
