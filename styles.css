@@ -155,4 +155,4 @@ a.pub__title { color: var(--navy); }
   .rows--logos .r-date { grid-column: 2; }
   .r-logo { width: 40px; height: 40px; }
 }
-.r-logo--empty { display: block; background: #f3f3f3; }
+.r-logo--empty { display: block; background: none; border: 0; }
