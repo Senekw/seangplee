@@ -194,3 +194,4 @@ a.pub__title { color: var(--navy); }
   .rows--logos .r-date { font-size: 13px; }
   .foot { margin: 32px 0 40px; line-height: 1.9; }
 }
+.foot .links { font-size: 14px; margin-top: 4px; }
