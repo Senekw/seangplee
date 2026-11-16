@@ -167,8 +167,7 @@ a.pub__title { color: var(--navy); }
 
   /* Nav: tidy 2 x 2 grid instead of an uneven wrap */
   .nav__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 4px 20px; }
-  .nav a { padding: 9px 0; font-size: 15px; }
-  .nav a:nth-child(even) { text-align: right; }
+  .nav a { padding: 9px 0; font-size: 15px; text-align: center; }
 
   /* Home: smaller photo so the name and bio show on the first screen */
   .hero { padding: 28px 0 4px; }
