@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=23" />
+  <link rel="stylesheet" href="styles.css?v=24" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -182,13 +182,36 @@
       <button class="see-more" id="see-more" type="button" hidden>See more</button>
       <script>
         (function () {
-          var imgs = document.querySelectorAll('.gallery img'), b = document.getElementById('see-more'), shown = 12;
-          function apply() {
-            for (var i = 0; i < imgs.length; i++) imgs[i].hidden = i >= shown;
+          var g = document.querySelector('.gallery'), b = document.getElementById('see-more');
+          var imgs = Array.prototype.slice.call(g.querySelectorAll('img'));
+          var mq = window.matchMedia('(max-width: 720px)');
+          var shown = 12, placed = 0, cols = [], heights = [], n = 0;
+          // Fixed columns: a new photo goes to the shortest column, so photos already on screen never move.
+          function place() {
+            var end = Math.min(shown, imgs.length);
+            for (; placed < end; placed++) {
+              var img = imgs[placed], k = 0;
+              for (var i = 1; i < n; i++) if (heights[i] < heights[k]) k = i;
+              cols[k].appendChild(img);
+              heights[k] += img.getAttribute('height') / img.getAttribute('width') + 0.08;
+            }
             b.hidden = shown >= imgs.length;
           }
-          b.addEventListener('click', function () { shown += 24; apply(); });
-          apply();
+          function build() {
+            n = mq.matches ? 2 : 3;
+            g.textContent = ''; g.classList.add('is-cols');
+            cols = []; heights = []; placed = 0;
+            for (var i = 0; i < n; i++) {
+              var c = document.createElement('div'); c.className = 'gcol';
+              g.appendChild(c); cols.push(c); heights.push(0);
+            }
+            place();
+          }
+          b.addEventListener('click', function () { shown += 24; place(); b.blur(); });
+          function check() { if ((mq.matches ? 2 : 3) !== n) build(); }
+          if (mq.addEventListener) mq.addEventListener('change', check); else mq.addListener(check);
+          window.addEventListener('resize', check);
+          build();
         })();
       </script>
     </section>
